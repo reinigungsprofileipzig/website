@@ -1669,3 +1669,30 @@ body.mobile-menu-open {
   font-family: 'Font Awesome 6 Brands';
   font-display: swap;
 }
+
+/* ========================================================================== */
+/* FINALER KONTRAST-FIX FÜR HEADER-BUTTON (#cta-button)                 */
+/* ========================================================================== */
+
+/* --- Normaler Zustand (oben auf der Seite) --- */
+/* Setzt eine neue, kontrastreiche Kombination: Dunkler Hintergrund, weißer Text. */
+#page-header #cta-button {
+    background-color: rgb(27 64 96 / 1) !important;  /* bg-brand-dark */
+    color: #ffffff !important;                      /* text-white */
+}
+/* Definiert den passenden Hover-Effekt. */
+#page-header #cta-button:hover {
+    background-color: rgb(56 99 125 / 1) !important; /* bg-brand-mid-dark */
+}
+
+
+/* --- Gescroolter Zustand (.header-scrolled) --- */
+/* Kehrt die Farben für den dunklen Header um: Weißer Hintergrund, dunkler Text. */
+#page-header.header-scrolled #cta-button {
+    background-color: #ffffff !important;                      /* bg-white */
+    color: rgb(27 64 96 / 1) !important;  /* text-brand-dark */
+}
+/* Definiert den passenden Hover-Effekt für den gescrollten Zustand. */
+#page-header.header-scrolled #cta-button:hover {
+    background-color: #f0f5f7 !important; /* Ein leichtes Grau */
+}
