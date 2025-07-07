@@ -6,8 +6,41 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Reinigungsfirma Leipzig | ReinigungsProfi - Ihr Premium-Partner</title>
 <meta content="Ihre Premium-Reinigungsfirma in Leipzig. Wir stehen für makellose Sauberkeit &amp; professionellen Service für Büro, Praxis &amp; Gebäude. ✓ Lokal ✓ Zuverlässig ✓ Jetzt Angebot anfordern!" name="description"/>
-<link href="/css/all.min.css" rel="stylesheet"/>
-<link href="/style.css" rel="stylesheet"/>
+
+<!-- ===================== NEU: KRITISCHES CSS UND ASYNCHRONES LADEN ===================== -->
+
+<!-- 1. Kritisches CSS direkt einfügen, damit die Seite sofort gezeichnet werden kann -->
+<style>
+    /* === Kritisches CSS für Font Awesome Icons (aus all.min.css / icons.min.css) === */
+    @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url(/webfonts/fa-solid-900.woff2) format("woff2")}.fa-solid,.fas{font-family:"Font Awesome 6 Free";font-weight:900}
+    @font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:swap;src:url(/webfonts/fa-brands-400.woff2) format("woff2")}.fa-brands,.fab{font-family:"Font Awesome 6 Brands";font-weight:400}
+    .fa,.fas,.fab{display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-bars::before{content:"\f0c9"}.fa-phone::before{content:"\f095"}.fa-chevron-down::before{content:"\f078"} /* Nur die Icons, die im Header/Hero sichtbar sind */
+
+    /* === Kritisches CSS für Ihre Seite (aus style.css) === */
+    :root{--brand-primary:#0a4d68;--brand-mid-dark:#083a50;--brand-accent:#fca311;} /* Farben definieren */
+    body{font-family:Raleway,sans-serif;background-color:#f7f9fa;color:#333} /* Fallback-Farbe */
+    .bg-brand-light{background-color: #f7f9fa;}
+    header{position:sticky;top:0;z-index:50}
+    .container{width:100%;margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem}
+    @media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}
+    nav{display:flex;justify-content:space-between;align-items:center;padding-top:.75rem;padding-bottom:.75rem}
+    .hero-gradient{background:linear-gradient(135deg,var(--brand-primary) 0%,var(--brand-mid-dark) 100%);color:#fff}
+    .hero-title{font-size:2.25rem;line-height:2.5rem;font-weight:800;letter-spacing:-.025em;margin-bottom:1rem}
+    .hero-subtitle{color:#e5e7eb;margin-bottom:2rem}
+    .btn-shadow-elegant{display:inline-block;background-color:var(--brand-accent);color:#fff;font-weight:700;font-size:1.125rem;line-height:1.75rem;padding:1rem 2rem;border-radius:.5rem;border:2px solid rgba(255,255,255,.8)}
+</style>
+
+<!-- 2. Die kompletten CSS-Dateien nicht-blockierend nachladen -->
+<link rel="stylesheet" href="/css/all.min.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
+
+<!-- 3. Fallback für Browser ohne JavaScript -->
+<noscript>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</noscript>
+
+    
 <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
 <link href="/favicon.svg" rel="icon" type="image/svg+xml">
 <link href="/favicon.ico" rel="shortcut icon"/>
