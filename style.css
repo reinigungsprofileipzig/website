@@ -1,5 +1,5 @@
 /* ========================================================================== */
-/* FINALER, SICHERER FIX GEGEN WEISSEN RAND                               */
+/* FINALER, SICHERER FIX GEGEN WEISSEN RAND & ZENTRIERUNGSPROBLEME      */
 /* ========================================================================== */
 html, body {
     margin: 0;
@@ -8,6 +8,10 @@ html, body {
     overflow-x: hidden;
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
@@ -1614,9 +1618,10 @@ body.mobile-menu-open {
     }
 }
 
-/* Dropdown-Pfeile im mobilen Menü sicher anzeigen */
+/* Dropdown-Pfeile im mobilen Menü sicher anzeigen und färben */
 #mobile-menu .dropdown-toggle-mobile i.fa-chevron-down {
     display: inline-block !important;
+    color: rgb(86 134 154) !important;
 }
 
 /* Schriftart im mobilen Menü vergrößern */
