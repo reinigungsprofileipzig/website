@@ -1690,3 +1690,7 @@ body.mobile-menu-open {
   font-family: 'Font Awesome 6 Brands';
   font-display: swap;
 }
+
+.service-list-item i {
+  margin-right: 0.75rem; /* Fügt einen Abstand von 12px rechts vom Icon hinzu */
+}
