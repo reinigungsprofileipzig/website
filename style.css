@@ -1,9 +1,13 @@
-/* FINALER, SICHERER FIX gegen weißen Rand */
-body {
+/* ========================================================================== */
+/* FINALER, SICHERER FIX GEGEN WEISSEN RAND                               */
+/* ========================================================================== */
+html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
     overflow-x: hidden;
 }
+
 
 /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
@@ -1598,33 +1602,62 @@ body.mobile-menu-open {
 }
 
 /* ========================================================================== */
-/* FINALE KORREKTUREN: Kontrast, Mobile-Anpassungen & Font-Display      */
+/* FINALE, KOMBINIERTE KORREKTUREN                                       */
 /* ========================================================================== */
 
-/* --- A) KONTRAST-FIXES (DESKTOP & MOBIL) --- */
+/* --- 1. MOBILES LAYOUT & MENÜ --- */
 
-/* 1. Header CTA-Button ("Angebot anfordern") - KORRIGIERTE REGEL */
+/* Desktop CTA-Button auf Mobilgeräten sicher ausblenden */
+@media (max-width: 1023px) {
+    #desktop-cta-buttons {
+        display: none !important;
+    }
+}
+
+/* Dropdown-Pfeile im mobilen Menü sicher anzeigen */
+#mobile-menu .dropdown-toggle-mobile i.fa-chevron-down {
+    display: inline-block !important;
+}
+
+/* Schriftart im mobilen Menü vergrößern */
+#mobile-menu .nav-link-mobile,
+#mobile-menu .dropdown-toggle-mobile > span,
+#mobile-menu .dropdown-link {
+    font-size: 1.125rem !important;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Mobilen "Jetzt anrufen"-Button gezielt ausblenden */
+#mobile-menu .mobile-cta-buttons a[href^="tel:"] {
+    display: none !important;
+}
+
+
+/* --- 2. KONTRAST-FIXES --- */
+
+/* Header CTA-Button (Desktop) - FINALER FIX */
 #page-header #cta-button {
   background-color: rgb(27 64 96 / 1) !important;
-  color: #fff !important;
+  color: #ffffff !important;
 }
 #page-header #cta-button:hover {
   background-color: rgb(56 99 125 / 1) !important;
 }
 #page-header.header-scrolled #cta-button {
   color: rgb(27 64 96 / 1) !important;
-  background-color: #fff !important;
+  background-color: #ffffff !important;
 }
 #page-header.header-scrolled #cta-button:hover {
    background-color: #f0f5f7 !important;
 }
 
-/* 2. Hero-Bereich CTA-Button ("Jetzt kostenloses Angebot...") */
+/* Hero-Button */
 .hero-gradient .btn-shadow-elegant {
    color: rgb(27 64 96 / 1) !important;
 }
 
-/* 3. Kontaktformular Submit-Button */
+/* Formular-Button */
 #kontakt form button[type="submit"] {
    background-color: rgb(27 64 96 / 1) !important;
 }
@@ -1632,7 +1665,7 @@ body.mobile-menu-open {
    background-color: rgb(56 99 125 / 1) !important;
 }
 
-/* 4. Mobiler "Angebot anfordern"-Button (Kontrast-Fix) */
+/* Mobiler "Angebot anfordern"-Button */
 #mobile-menu .mobile-cta-buttons a.bg-brand-primary {
     background-color: rgb(27 64 96 / 1) !important;
 }
@@ -1641,26 +1674,9 @@ body.mobile-menu-open {
 }
 
 
-/* --- B) ANPASSUNGEN FÜR DAS MOBILE MENÜ --- */
+/* --- 3. PERFORMANCE-FIXES --- */
 
-/* 5. Mobilen "Jetzt anrufen"-Button gezielt ausblenden */
-#mobile-menu .mobile-cta-buttons a[href^="tel:"] {
-    display: none !important;
-}
-
-/* 6. Schriftart im mobilen Menü vergrößern */
-#mobile-menu .nav-link-mobile,
-#mobile-menu .dropdown-toggle-mobile > span, /* Nur den Text, nicht das Icon */
-#mobile-menu .dropdown-link {
-    font-size: 1.125rem !important; /* Entspricht 18px */
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-}
-
-
-/* --- C) FONT-DISPLAY FÜR ICON-SCHRIFTARTEN --- */
-
-/* 7. font-display:swap für Font Awesome Icons (sicherer Override) */
+/* font-display:swap für Font Awesome */
 @font-face {
   font-family: 'Font Awesome 6 Free';
   font-display: swap;
@@ -1668,31 +1684,4 @@ body.mobile-menu-open {
 @font-face {
   font-family: 'Font Awesome 6 Brands';
   font-display: swap;
-}
-
-/* ========================================================================== */
-/* FINALER KONTRAST-FIX FÜR HEADER-BUTTON (#cta-button)                 */
-/* ========================================================================== */
-
-/* --- Normaler Zustand (oben auf der Seite) --- */
-/* Setzt eine neue, kontrastreiche Kombination: Dunkler Hintergrund, weißer Text. */
-#page-header #cta-button {
-    background-color: rgb(27 64 96 / 1) !important;  /* bg-brand-dark */
-    color: #ffffff !important;                      /* text-white */
-}
-/* Definiert den passenden Hover-Effekt. */
-#page-header #cta-button:hover {
-    background-color: rgb(56 99 125 / 1) !important; /* bg-brand-mid-dark */
-}
-
-
-/* --- Gescroolter Zustand (.header-scrolled) --- */
-/* Kehrt die Farben für den dunklen Header um: Weißer Hintergrund, dunkler Text. */
-#page-header.header-scrolled #cta-button {
-    background-color: #ffffff !important;                      /* bg-white */
-    color: rgb(27 64 96 / 1) !important;  /* text-brand-dark */
-}
-/* Definiert den passenden Hover-Effekt für den gescrollten Zustand. */
-#page-header.header-scrolled #cta-button:hover {
-    background-color: #f0f5f7 !important; /* Ein leichtes Grau */
 }
