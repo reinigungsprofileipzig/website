@@ -1789,3 +1789,15 @@ body.mobile-menu-open {
 body.mobile-menu-open {
   overflow: auto !important;
 }
+
+/* OPTIMIERUNG: Entfernt den weißen Rand auf Mobilgeräten */
+body {
+  margin: 0;
+}
+
+/* Der Rest Ihrer style.css Datei beginnt hier... */
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  /* ... */
+}
+
