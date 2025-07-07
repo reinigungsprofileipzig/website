@@ -6,8 +6,49 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Reinigungsfirma Leipzig | ReinigungsProfi - Ihr Premium-Partner</title>
 <meta content="Ihre Premium-Reinigungsfirma in Leipzig. Wir stehen für makellose Sauberkeit &amp; professionellen Service für Büro, Praxis &amp; Gebäude. ✓ Lokal ✓ Zuverlässig ✓ Jetzt Angebot anfordern!" name="description"/>
-<link href="/css/all.min.css" rel="stylesheet"/>
-<link href="/style.css" rel="stylesheet"/>
+
+    <!-- 1. WICHTIGE SCHRIFTARTEN SOFORT UND PARALLEL LADEN (PRELOAD) -->
+    <!-- Dies bricht die Ladekette auf (löst "Netzwerkabhängigkeitsbaum"-Problem) -->
+    <link rel="preload" href="/webfonts/raleway-v28-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/webfonts/raleway-v28-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/webfonts/raleway-v28-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- 2. KRITISCHES CSS DIREKT EINFÜGEN -->
+    <!-- Dies löst das "Render-blocking"-Problem und verbessert FCP/LCP dramatisch -->
+    <style>
+        /* Minimal notwendige Stile für den sofort sichtbaren Bereich */
+        :root{--brand-primary:#0a4d68;--brand-mid-dark:#083a50;--brand-accent:#fca311;--brand-light:#f7f9fa}
+        @font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url(/webfonts/raleway-v28-latin-regular.woff2) format("woff2");font-display:swap}
+        @font-face{font-family:'Raleway';font-style:normal;font-weight:700;src:url(/webfonts/raleway-v28-latin-700.woff2) format("woff2");font-display:swap}
+        @font-face{font-family:'Raleway';font-style:normal;font-weight:800;src:url(/webfonts/raleway-v28-latin-800.woff2) format("woff2");font-display:swap}
+        @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url(/webfonts/fa-solid-900.woff2) format("woff2")}
+        .fa-solid,.fas{font-family:"Font Awesome 6 Free";font-weight:900}
+        .fa,.fas{display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}
+        .fa-phone:before{content:"\f095"}.fa-chevron-down:before{content:"\f078"}.fa-bars:before{content:"\f0c9"}
+        body{font-family:Raleway,sans-serif;background-color:var(--brand-light)}
+        header{position:sticky;top:0;z-index:50}
+        .container{width:100%;margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem}
+        @media(min-width:1024px){.container{max-width:1024px}}
+        nav{display:flex;justify-content:space-between;align-items:center;padding-top:.75rem;padding-bottom:.75rem}
+        .hero-gradient{background:linear-gradient(135deg,var(--brand-primary) 0%,var(--brand-mid-dark) 100%);color:#fff}
+        .hero-title{font-size:2.25rem;line-height:2.5rem;font-weight:800;letter-spacing:-.025em;margin-bottom:1rem}
+        .hero-subtitle{color:#e5e7eb;margin-bottom:2rem}
+        .btn-shadow-elegant{display:inline-block;background-color:var(--brand-accent);color:#fff;font-weight:700;font-size:1.125rem;padding:.75rem 2rem;border-radius:.5rem;border:2px solid #fff}
+        .hidden{display:none}
+        img{max-width:100%;height:auto}
+    </style>
+
+    <!-- 3. VOLLE CSS-DATEIEN ASYNCHRON (NICHT-BLOCKIEREND) LADEN -->
+    <link rel="stylesheet" href="/css/all.min.css" media="print" onload="this.media='all'"> <!-- Nutzen Sie hier Ihren neuen Dateinamen, z.B. /css/icons.min.css -->
+    <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
+
+    <!-- Fallback für Browser ohne JavaScript -->
+    <noscript>
+      <link rel="stylesheet" href="/css/all.min.css"> <!-- Oder /css/icons.min.css -->
+      <link rel="stylesheet" href="/style.css">
+    </noscript>    
+    
 <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
 <link href="/favicon.svg" rel="icon" type="image/svg+xml">
 <link href="/favicon.ico" rel="shortcut icon"/>
