@@ -1,7 +1,8 @@
-/* Sicherer Fix gegen weißen Rand */
+/* FINALER, SICHERER FIX gegen weißen Rand */
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
@@ -1597,14 +1598,18 @@ body.mobile-menu-open {
 }
 
 /* ========================================================================== */
-/* KORREKTUR: Kontrast-Fixes & Anpassungen für das mobile Menü         */
+/* FINALE KORREKTUREN: Kontrast, Mobile-Anpassungen & Font-Display      */
 /* ========================================================================== */
 
 /* --- A) KONTRAST-FIXES (DESKTOP & MOBIL) --- */
 
-/* 1. Header CTA-Button ("Angebot anfordern") */
+/* 1. Header CTA-Button ("Angebot anfordern") - KORRIGIERTE REGEL */
 #page-header #cta-button {
-  color: rgb(27 64 96 / 1) !important;
+  background-color: rgb(27 64 96 / 1) !important;
+  color: #fff !important;
+}
+#page-header #cta-button:hover {
+  background-color: rgb(56 99 125 / 1) !important;
 }
 #page-header.header-scrolled #cta-button {
   color: rgb(27 64 96 / 1) !important;
@@ -1641,4 +1646,26 @@ body.mobile-menu-open {
 /* 5. Mobilen "Jetzt anrufen"-Button gezielt ausblenden */
 #mobile-menu .mobile-cta-buttons a[href^="tel:"] {
     display: none !important;
+}
+
+/* 6. Schriftart im mobilen Menü vergrößern */
+#mobile-menu .nav-link-mobile,
+#mobile-menu .dropdown-toggle-mobile > span, /* Nur den Text, nicht das Icon */
+#mobile-menu .dropdown-link {
+    font-size: 1.125rem !important; /* Entspricht 18px */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+
+/* --- C) FONT-DISPLAY FÜR ICON-SCHRIFTARTEN --- */
+
+/* 7. font-display:swap für Font Awesome Icons (sicherer Override) */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-display: swap;
 }
