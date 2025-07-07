@@ -1757,3 +1757,35 @@ body.mobile-menu-open {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
+
+
+/* OPTIMIERUNG: Mobiles Menü standardmäßig auf allen Geräten anzeigen (CSS-only) - KORRIGIERTE VERSION */
+/* ================================================================================================ */
+
+/* 1. Desktop-Navigation und zugehörige Buttons komplett ausblenden */
+#desktop-nav-content, 
+#desktop-cta-buttons {
+    display: none !important;
+}
+
+/* 2. Den Hamburger-Button ausblenden, da das Menü jetzt immer offen ist */
+#mobile-menu-button {
+    display: none !important;
+}
+
+/* 3. Das mobile Menü dauerhaft sichtbar machen und korrekt positionieren */
+#mobile-menu {
+    display: block !important; /* Erzwingt die Sichtbarkeit */
+    position: static !important; /* Entfernt die fixe Positionierung */
+    transform: none !important; /* Entfernt die "hidden" Transformation */
+    height: auto !important; /* Erlaubt natürliche Höhe */
+    overflow-y: visible !important;
+    padding: 1.5rem !important; /* Stellt das ursprüngliche Padding wieder her, das von Tailwind verwendet wird */
+    background-color: #fff !important; /* Setzt einen weißen Hintergrund */
+    border-bottom: 1px solid #e5e7eb; /* Fügt eine Trennlinie hinzu */
+}
+
+/* 4. Sicherstellen, dass die JS-Klasse zum Body-Scrolling keine Auswirkung mehr hat */
+body.mobile-menu-open {
+  overflow: auto !important;
+}
