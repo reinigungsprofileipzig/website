@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     title.textContent = selectedPlace || district;
     if (districtLabel) districtLabel.textContent = selectedPlace ? `Ortsteil im Stadtbezirk ${district}` : `Stadtbezirk mit ${trigger.dataset.places.split('|').length} Ortsteilen`;
     if (districtCopy) districtCopy.textContent = trigger.dataset.context || '';
+    const mobileSelect = document.getElementById('mobile-district-select');
+    if (mobileSelect && selectedPlace) mobileSelect.value = selectedPlace;
     list.replaceChildren(...trigger.dataset.places.split('|').map(place => {
       const item = document.createElement('li');
       item.textContent = place;
@@ -79,6 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.addEventListener('click', () => updateDistrict(trigger));
     trigger.addEventListener('focus', () => updateDistrict(trigger));
   });
+  const mobileDistrictSelect = document.getElementById('mobile-district-select');
+  if (mobileDistrictSelect) {
+    const selectDistrict = () => {
+      const area = [...document.querySelectorAll('.map-neighborhood')].find(item => item.dataset.place === mobileDistrictSelect.value);
+      if (area) updateDistrict(area);
+    };
+    mobileDistrictSelect.addEventListener('input', selectDistrict);
+    mobileDistrictSelect.addEventListener('change', selectDistrict);
+  }
   document.querySelectorAll('.map-neighborhood').forEach(area => {
     area.addEventListener('mouseenter', () => updateDistrict(area));
     area.addEventListener('keydown', event => {
