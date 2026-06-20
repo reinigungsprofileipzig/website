@@ -357,7 +357,7 @@ async function build() {
   await writePage('/dienstleistungen/branchen/', industriesPage());
   for (const service of services) await writePage(service.path, servicePage(service));
   for (const industry of industries) await writePage(industry.path, industryPage(industry));
-  await writePage('/ueber-uns/', aboutPage().replace('Seit 2020 in Leipzig', 'Persönlich für Leipzig'));
+  await writePage('/ueber-uns/', aboutPage().replace('Seit 2020 in Leipzig', 'Inhabergeführt'));
   await writePage('/jobs/', jobsPage());
 
   await mkdir(path.join(root, 'data'), { recursive: true });
