@@ -80,6 +80,7 @@ p{color:var(--ink-soft)}
 .trust-strip{position:relative;z-index:2;background:#fff;border-bottom:1px solid var(--line)}
 .trust-list{display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;align-items:center;gap:.7rem;padding:1.1rem 0;margin:0 auto;list-style:none;text-align:center;font-size:.82rem;font-weight:700;color:var(--brand-dark)}
 .trust-list li{display:flex;align-items:center;justify-content:center;gap:.45rem;text-align:center}
+.trust-list li small{display:block;font-size:.72em;font-weight:600;line-height:1.25}
 .trust-list li:before{content:'✓';display:grid;place-items:center;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--brand-pale);color:var(--success)}
 .breadcrumb{border-bottom:1px solid var(--line);background:var(--wash)}
 .breadcrumb ol{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:0;padding:.75rem 0;list-style:none;font-size:.82rem;color:var(--ink-soft)}
@@ -191,4 +192,5 @@ details.accordion p,details.accordion ul{padding:0 1.1rem 1rem;margin:0;color:va
 @media(min-width:820px){body{padding-bottom:0}.section{padding:6rem 0}.hero-grid{grid-template-columns:1.1fr .9fr}.hero--simple .hero-grid{grid-template-columns:1fr}.hero--simple h1{font-size:clamp(2.5rem,5vw,3.7rem)}.card-grid.three{grid-template-columns:repeat(3,1fr)}.feature-grid{grid-template-columns:repeat(3,1fr)}.process{grid-template-columns:repeat(5,1fr)}.home-process{grid-template-columns:repeat(3,1fr)}.content-grid{grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr)}.map-layout{grid-template-columns:1.15fr .85fr}.contact-wrap{grid-template-columns:.8fr 1.2fr}.sticky-cta{display:none}}
 @media(min-width:1040px){.desktop-nav{display:flex}.menu-toggle{display:none}.mobile-nav{display:none!important}.card-grid.four{grid-template-columns:repeat(4,1fr)}.footer-grid{grid-template-columns:1.3fr 1fr 1fr 1fr}.hero{padding:6.2rem 0 5.5rem}.industry-nav-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(min-width:820px){.mobile-district-picker{display:none}}
+@media(min-width:600px){.trust-list{grid-template-columns:repeat(5,1fr)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
