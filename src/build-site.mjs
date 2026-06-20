@@ -89,7 +89,7 @@ function header() {
 }
 
 function trustStrip() {
-  return `<aside class="trust-strip" aria-label="Ihre Vorteile"><ul class="container trust-list"><li>Antwort in 24 Stunden</li><li>Lokal in Leipzig</li><li>Transparente Angebote</li><li>Fester Ansprechpartner</li><li>Eigene, fest angestellte Mitarbeiter <small>sozialversicherungspflichtig beschäftigt</small></li></ul></aside>`;
+  return `<aside class="trust-strip" aria-label="Ihre Vorteile"><ul class="container trust-list"><li>Antwort in 24 Stunden</li><li>Lokal in Leipzig</li><li>Transparente Angebote</li><li>Fester Ansprechpartner</li><li>Eigene sozialversicherungspflichtig angestellte Mitarbeiter</li></ul></aside>`;
 }
 
 function breadcrumb() {
