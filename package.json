@@ -1,0 +1,10 @@
+{
+  "name": "reinigungsprofi-leipzig",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build-site.mjs",
+    "build:map": "node scripts/build-leipzig-map.mjs",
+    "check": "node scripts/check-site.mjs"
+  }
+}

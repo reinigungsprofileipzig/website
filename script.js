@@ -1,124 +1,111 @@
 document.addEventListener('DOMContentLoaded', () => {
-    'use strict';
+  'use strict';
 
-    const page = {
-        /**
-         * Initialisiert alle Skripte auf der Seite.
-         */
-        init() {
-            this.initHeaderScroll();
-            this.initMobileMenu();
-            this.initMobileAccordion();
-        },
+  const menuButton = document.querySelector('.menu-toggle') || document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-nav') || document.getElementById('mobile-menu');
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.classList.toggle('hidden', !open);
+      document.body.classList.toggle('menu-open', open);
+      const icon = menuButton.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars', !open);
+        icon.classList.toggle('fa-xmark', open);
+      }
+    });
+  }
 
-        /**
-         * NEU: Optimierte Funktion für den Header beim Scrollen.
-         * Diese Version nutzt `requestAnimationFrame`, um DOM-Änderungen (hinzufügen/entfernen von Klassen)
-         * außerhalb des kritischen Render-Pfades auszuführen. Das behebt das Problem des
-         * "erzwungenen dynamischen Umbruchs" (Forced Synchronous Layout) und verbessert die Performance.
-         */
-        initHeaderScroll() {
-            const header = document.getElementById('page-header');
-            if (!header) return;
+  document.querySelectorAll('.dropdown-toggle-mobile').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const menu = toggle.nextElementSibling;
+      if (!menu) return;
+      const open = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  });
 
-            const scrollThreshold = 20;
-            let isTicking = false; // Flag, um zu verhindern, dass das Skript bei jedem Scroll-Event feuert
+  const header = document.getElementById('page-header');
+  if (header) {
+    const updateHeader = () => header.classList.toggle('header-scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+  }
 
-            // Die Funktion, die tatsächlich das DOM ändert
-            const updateHeader = () => {
-                if (window.scrollY > scrollThreshold) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
-                }
-                // Animation Frame ist fertig, erlaube den nächsten
-                isTicking = false;
-            };
+  const updateDistrict = trigger => {
+    const title = document.getElementById('district-detail-title');
+    const districtLabel = document.getElementById('district-detail-district');
+    const districtCopy = document.getElementById('district-detail-copy');
+    const list = document.getElementById('district-detail-list');
+    if (!title || !list) return;
+    const district = trigger.dataset.district;
+    const selectedPlace = trigger.dataset.place || '';
+    document.querySelectorAll('.map-neighborhood').forEach(item => {
+      item.classList.toggle('active', item === trigger);
+      item.classList.toggle('district-active', item.dataset.district === district);
+    });
+    document.querySelectorAll('.map-legend-item').forEach(item => {
+      const active = item.dataset.district === district;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+    title.textContent = selectedPlace || district;
+    if (districtLabel) districtLabel.textContent = selectedPlace ? `Ortsteil im Stadtbezirk ${district}` : `Stadtbezirk mit ${trigger.dataset.places.split('|').length} Ortsteilen`;
+    if (districtCopy) districtCopy.textContent = trigger.dataset.context || '';
+    list.replaceChildren(...trigger.dataset.places.split('|').map(place => {
+      const item = document.createElement('li');
+      item.textContent = place;
+      item.classList.toggle('selected', place === selectedPlace);
+      return item;
+    }));
+  };
+  document.querySelectorAll('.map-neighborhood, .map-legend-item').forEach(trigger => {
+    trigger.addEventListener('click', () => updateDistrict(trigger));
+    trigger.addEventListener('focus', () => updateDistrict(trigger));
+  });
+  document.querySelectorAll('.map-neighborhood').forEach(area => {
+    area.addEventListener('mouseenter', () => updateDistrict(area));
+    area.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        updateDistrict(area);
+      }
+    });
+  });
 
-            // Der Event-Listener, der bei Scrollen aufgerufen wird
-            const handleScroll = () => {
-                if (!isTicking) {
-                    // Fordere den Browser auf, 'updateHeader' im nächsten Frame auszuführen
-                    window.requestAnimationFrame(updateHeader);
-                    isTicking = true; // Sperre weitere Aufrufe bis der Frame gezeichnet wurde
-                }
-            };
-            
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            
-            // Führe den initialen Check ebenfalls im nächsten Frame aus, um das erste Rendern nicht zu blockieren.
-            handleScroll(); 
-        },
-        // --- Ende der Änderungen ---
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(item => item.classList.toggle('active', item === button));
+      const filter = button.dataset.filter;
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.hidden = filter !== 'all' && card.dataset.category !== filter;
+      });
+    });
+  });
 
-
-        /**
-         * UNVERÄNDERT: Initialisiert die Funktionalität für das mobile Menü (Burger-Button).
-         * Dieser Code war bereits performant und musste nicht geändert werden.
-         */
-        initMobileMenu() {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (!menuButton || !mobileMenu) return;
-
-            const menuIcon = menuButton.querySelector('i');
-
-            menuButton.addEventListener('click', () => {
-                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-
-                mobileMenu.classList.toggle('hidden');
-                document.body.classList.toggle('mobile-menu-open');
-                menuButton.setAttribute('aria-expanded', String(!isExpanded));
-
-                if (menuIcon) {
-                    menuIcon.classList.toggle('fa-bars', isExpanded);
-                    menuIcon.classList.toggle('fa-xmark', !isExpanded);
-                }
-            });
-        },
-
-        /**
-         * UNVERÄNDERT: Initialisiert das Akkordeon-Menü für die mobile Ansicht.
-         * Dieser Code war bereits performant und musste nicht geändert werden.
-         */
-        initMobileAccordion() {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle-mobile');
-            if (dropdownToggles.length === 0) return;
-
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const currentMenu = toggle.nextElementSibling;
-                    const isOpening = currentMenu.classList.contains('hidden');
-
-                    // Schließe zuerst alle anderen Akkordeon-Menüs
-                    dropdownToggles.forEach(otherToggle => {
-                        if (otherToggle !== toggle) {
-                            const otherMenu = otherToggle.nextElementSibling;
-                            const otherIcon = otherToggle.querySelector('i.fa-chevron-down');
-                            
-                            if (otherMenu && !otherMenu.classList.contains('hidden')) {
-                                otherMenu.classList.add('hidden');
-                                if (otherIcon) {
-                                    otherIcon.classList.remove('rotate-180');
-                                }
-                            }
-                        }
-                    });
-
-                    // Öffne/Schließe das aktuelle Akkordeon-Menü
-                    if (currentMenu) {
-                        currentMenu.classList.toggle('hidden', !isOpening);
-                        const currentIcon = toggle.querySelector('i.fa-chevron-down');
-                        if (currentIcon) {
-                            currentIcon.classList.toggle('rotate-180', isOpening);
-                        }
-                    }
-                });
-            });
-        }
-    };
-
-    // Starte die Initialisierung, nachdem das DOM geladen ist.
-    page.init();
+  const params = new URLSearchParams(window.location.search);
+  document.querySelectorAll('.js-contact-form').forEach(form => {
+    const status = form.querySelector('.form-status');
+    if (status && ['success', 'sent', '1'].includes(params.get('status')) || status && params.get('sent') === '1') {
+      status.hidden = false;
+      status.textContent = 'Vielen Dank. Ihre Anfrage wurde gesendet. Wir melden uns schnellstmöglich.';
+    }
+    form.addEventListener('invalid', () => {
+      if (status) {
+        status.hidden = false;
+        status.textContent = 'Bitte prüfen Sie die markierten Pflichtfelder.';
+      }
+    }, true);
+    form.addEventListener('submit', () => {
+      if (status) {
+        status.hidden = false;
+        status.textContent = 'Ihre Anfrage wird gesendet …';
+      }
+    });
+  });
 });
