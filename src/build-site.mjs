@@ -360,7 +360,7 @@ async function build() {
   for (const service of services) await writePage(service.path, servicePage(service));
   for (const industry of industries) await writePage(industry.path, industryPage(industry));
   await writePage('/ueber-uns/', aboutPage().replace('Seit 2020 in Leipzig', 'Inhabergeführt'));
-  await writePage('/jobs/', jobsPage());
+  await writePage('/jobs/', jobsPage().replace('</section><section class="section">', `</section>${trustStrip()}<section class="section">`));
 
   await mkdir(path.join(root, 'data'), { recursive: true });
   await writeFile(path.join(root, 'data', 'services.json'), JSON.stringify({ categories, services, districts, industries }, null, 2), 'utf8');
