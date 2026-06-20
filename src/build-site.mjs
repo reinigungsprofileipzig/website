@@ -79,22 +79,22 @@ function header() {
   <div class="container header-inner">
     <a class="logo" href="/" aria-label="ReinigungsProfi Leipzig Startseite"><img src="/images/logo-reinigungsprofi-leipzig-384.webp" width="184" height="30" alt="ReinigungsProfi Leipzig"></a>
     <nav class="desktop-nav" aria-label="Hauptnavigation">
-      <details><summary>Dienstleistungen ▾</summary><div class="mega"><a class="mega-overview" href="/dienstleistungen/">Leistungsübersicht</a>${serviceLinks}</div></details>
-      <details><summary>Branchen ▾</summary><div class="industry-mega"><a class="industry-overview" href="/dienstleistungen/branchen/">Alle Branchenlösungen</a>${industryLinks}</div></details>
-      <a href="/ueber-uns/">Über uns</a>
-      <a href="/jobs/">Jobs</a>
-      <a href="tel:${site.phone}">${site.phoneDisplay}</a>
-      <a class="nav-cta" href="#kontakt">Angebot anfordern</a>
+      <details><summary><span class="nav-icon" aria-hidden="true">▦</span>Dienstleistungen ▾</summary><div class="mega"><a class="mega-overview" href="/dienstleistungen/">Leistungsübersicht</a>${serviceLinks}</div></details>
+      <details><summary><span class="nav-icon" aria-hidden="true">◇</span>Branchen ▾</summary><div class="industry-mega"><a class="industry-overview" href="/dienstleistungen/branchen/">Alle Branchenlösungen</a>${industryLinks}</div></details>
+      <a href="/ueber-uns/"><span class="nav-icon" aria-hidden="true">◎</span>Über uns</a>
+      <a href="/jobs/"><span class="nav-icon" aria-hidden="true">＋</span>Jobs</a>
+      <a href="tel:${site.phone}"><span class="nav-icon" aria-hidden="true">☎</span>${site.phoneDisplay}</a>
+      <a class="nav-cta" href="#kontakt"><span class="nav-icon" aria-hidden="true">✉</span>Angebot anfordern</a>
     </nav>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen" onclick="var n=document.getElementById('mobile-nav'),o=!n.classList.contains('open');n.classList.toggle('open');n.classList.remove('hidden');this.setAttribute('aria-expanded',o?'true':'false');this.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');document.body.classList.toggle('menu-open',o);return false"><span aria-hidden="true">☰</span></button>
   </div>
 </header>
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
-  <details><summary>Dienstleistungen</summary><div><a href="/dienstleistungen/">Leistungsübersicht</a>${mobileServices}</div></details>
-  <details><summary>Branchen</summary><div><a href="/dienstleistungen/branchen/">Branchenübersicht</a>${industryLinks}</div></details>
-  <a href="/ueber-uns/">Über uns</a><a href="/jobs/">Jobs</a>
-  <a href="tel:${site.phone}">Anrufen: ${site.phoneDisplay}</a>
-  <a href="#kontakt">Kostenloses Angebot anfordern</a>
+  <details><summary><span class="nav-icon" aria-hidden="true">▦</span>Dienstleistungen</summary><div><a href="/dienstleistungen/">Leistungsübersicht</a>${mobileServices}</div></details>
+  <details><summary><span class="nav-icon" aria-hidden="true">◇</span>Branchen</summary><div><a href="/dienstleistungen/branchen/">Branchenübersicht</a>${industryLinks}</div></details>
+  <a href="/ueber-uns/"><span class="nav-icon" aria-hidden="true">◎</span>Über uns</a><a href="/jobs/"><span class="nav-icon" aria-hidden="true">＋</span>Jobs</a>
+  <a href="tel:${site.phone}"><span class="nav-icon" aria-hidden="true">☎</span>Anrufen: ${site.phoneDisplay}</a>
+  <a href="#kontakt"><span class="nav-icon" aria-hidden="true">✉</span>Kostenloses Angebot anfordern</a>
 </nav>`;
 }
 
