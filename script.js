@@ -41,13 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const header = document.getElementById('page-header');
-  if (header) {
-    const updateHeader = () => header.classList.toggle('header-scrolled', window.scrollY > 20);
-    window.addEventListener('scroll', updateHeader, { passive: true });
-    updateHeader();
-  }
-
   const updateDistrict = trigger => {
     const title = document.getElementById('district-detail-title');
     const districtLabel = document.getElementById('district-detail-district');

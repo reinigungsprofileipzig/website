@@ -18,7 +18,7 @@ const optimizeImageMarkup = html => html.replace(/<img([^>]*?)src="(\/images\/[^
   const sizes = isCard
     ? '(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw'
     : '(max-width: 819px) calc(100vw - 2rem), 45vw';
-  return `<img${before}src="${base}-768.webp" srcset="${base}-480.webp 480w, ${base}-768.webp 768w" sizes="${sizes}"${after}>`;
+  return `<img${before}src="${base}-768.webp" srcset="${base}-480.webp 480w, ${base}-672.webp 672w, ${base}-768.webp 768w" sizes="${sizes}"${after}>`;
 });
 const writePage = async (pathname, html) => {
   const directory = pathname === '/' ? root : path.join(root, pathname.replace(/^\//, '').replace(/\/$/, ''));
@@ -178,7 +178,7 @@ function footer() {
     <div><h2>Kontakt</h2><ul class="footer-links"><li>${site.address}</li><li>${site.postalCode} ${site.city}</li><li><a href="tel:${site.phone}">${site.phoneDisplay}</a></li><li><a href="mailto:${site.email}">${site.email}</a></li></ul></div>
   </div><div class="footer-bottom">© ${new Date().getFullYear()} ReinigungsProfi Leipzig. Alle Rechte vorbehalten.</div></div></footer>
   <div class="sticky-cta" aria-label="Schnellkontakt"><a class="btn btn-brand" href="tel:${site.phone}">Anrufen</a><a class="btn btn-primary" href="#kontakt">Angebot</a></div>
-  <script src="/script.js?v=20260620-2" defer></script>`;
+  <script src="/script.js?v=20260621-3" defer></script>`;
 }
 
 function baseSchema(pathname) {
