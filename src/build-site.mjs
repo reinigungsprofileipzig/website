@@ -76,7 +76,7 @@ function header() {
       <a href="tel:${site.phone}">${site.phoneDisplay}</a>
       <a class="nav-cta" href="#kontakt">Angebot anfordern</a>
     </nav>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen"><span aria-hidden="true">☰</span></button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen" onclick="var n=document.getElementById('mobile-nav'),o=!n.classList.contains('open');n.classList.toggle('open');n.classList.remove('hidden');this.setAttribute('aria-expanded',o?'true':'false');this.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');document.body.classList.toggle('menu-open',o);return false"><span aria-hidden="true">☰</span></button>
   </div>
 </header>
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
@@ -168,7 +168,7 @@ function footer() {
     <div><h2>Kontakt</h2><ul class="footer-links"><li>${site.address}</li><li>${site.postalCode} ${site.city}</li><li><a href="tel:${site.phone}">${site.phoneDisplay}</a></li><li><a href="mailto:${site.email}">${site.email}</a></li></ul></div>
   </div><div class="footer-bottom">© ${new Date().getFullYear()} ReinigungsProfi Leipzig. Alle Rechte vorbehalten.</div></div></footer>
   <div class="sticky-cta" aria-label="Schnellkontakt"><a class="btn btn-brand" href="tel:${site.phone}">Anrufen</a><a class="btn btn-primary" href="#kontakt">Angebot</a></div>
-  <script src="/script.js" defer></script>`;
+  <script src="/script.js?v=20260620-2" defer></script>`;
 }
 
 function baseSchema(pathname) {

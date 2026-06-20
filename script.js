@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const menuButton = document.querySelector('.menu-toggle') || document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-nav') || document.getElementById('mobile-menu');
-  if (menuButton && mobileMenu) {
+  if (menuButton && mobileMenu && !menuButton.hasAttribute('onclick')) {
     menuButton.addEventListener('click', () => {
       const open = menuButton.getAttribute('aria-expanded') !== 'true';
       menuButton.setAttribute('aria-expanded', String(open));

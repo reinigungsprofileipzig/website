@@ -48,7 +48,7 @@ p{color:var(--ink-soft)}
 .industry-overview{grid-column:1/-1;background:var(--brand-dark);color:#fff!important;text-align:center;font-weight:800}
 .nav-cta{background:var(--accent);color:#fff!important;padding:.75rem 1.05rem!important;border-radius:.7rem}
 .nav-cta:hover{background:var(--accent-dark)}
-.menu-toggle{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:.7rem;background:#fff;color:var(--ink);font-size:1.4rem}
+.menu-toggle{position:relative;z-index:100;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:.7rem;background:#fff;color:var(--ink);font-size:1.4rem;pointer-events:auto;touch-action:manipulation;-webkit-tap-highlight-color:rgba(8,117,135,.16)}
 .mobile-nav{display:none;position:fixed;inset:76px 0 0;z-index:60;padding:1rem 1rem calc(2rem + env(safe-area-inset-bottom));background:#fff;overflow-y:auto;overscroll-behavior:contain;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch}
 .mobile-nav.open{display:block}
 .mobile-nav a,.mobile-nav summary{display:block;min-height:48px;padding:.9rem .5rem;border-bottom:1px solid var(--line);font-weight:700;list-style:none;touch-action:manipulation}
