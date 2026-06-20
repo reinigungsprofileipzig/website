@@ -105,8 +105,9 @@ p{color:var(--ink-soft)}
 .check-list li:before{content:'✓';position:absolute;left:0;top:.05rem;display:grid;place-items:center;width:1.35rem;height:1.35rem;border-radius:50%;background:var(--brand-pale);color:var(--success);font-weight:800;font-size:.75rem}
 .process{counter-reset:steps;display:grid;gap:1rem}
 .home-process{grid-template-columns:1fr;max-width:850px;margin:auto}
-.process article{counter-increment:steps;padding:1.25rem;background:#fff;border:1px solid var(--line);border-radius:1rem}
-.process article:before{content:counter(steps);display:grid;place-items:center;width:2.4rem;height:2.4rem;margin-bottom:.8rem;border-radius:50%;background:var(--brand-dark);color:#fff;font-weight:800}
+.process article{counter-increment:steps;padding:1.25rem;background:#fff;border:1px solid var(--line);border-radius:1rem;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease}
+.process article:before{content:counter(steps);display:grid;place-items:center;width:2.4rem;height:2.4rem;margin-bottom:.8rem;border-radius:50%;background:var(--brand-dark);color:#fff;font-weight:800;transition:transform .22s ease,background-color .22s ease}
+.process article h3{transition:color .22s ease}
 .process p{margin:0;font-size:.9rem}
 .content-grid{display:grid;gap:2.25rem;align-items:start}
 .content-copy p{font-size:1.01rem}
@@ -193,4 +194,5 @@ details.accordion p,details.accordion ul{padding:0 1.1rem 1rem;margin:0;color:va
 @media(min-width:1040px){.desktop-nav{display:flex}.menu-toggle{display:none}.mobile-nav{display:none!important}.card-grid.four{grid-template-columns:repeat(4,1fr)}.footer-grid{grid-template-columns:1.3fr 1fr 1fr 1fr}.hero{padding:6.2rem 0 5.5rem}.industry-nav-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(min-width:820px){.mobile-district-picker{display:none}}
 @media(min-width:600px){.trust-list{grid-template-columns:repeat(5,1fr)}}
+@media(hover:hover){.process article:hover{transform:translateY(-7px);border-color:var(--brand);background:#fbfefd;box-shadow:0 16px 36px rgba(18,67,77,.16)}.process article:hover:before{transform:scale(1.1);background:var(--brand)}.process article:hover h3{color:var(--brand)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
