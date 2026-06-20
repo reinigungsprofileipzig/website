@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  document.querySelectorAll('.mobile-nav details > summary').forEach(summary => {
+    summary.setAttribute('role', 'button');
+    summary.setAttribute('aria-expanded', String(summary.parentElement.open));
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      const details = summary.parentElement;
+      const open = !details.open;
+      details.open = open;
+      summary.setAttribute('aria-expanded', String(open));
+    });
+  });
+
   document.querySelectorAll('.dropdown-toggle-mobile').forEach(toggle => {
     toggle.addEventListener('click', () => {
       const menu = toggle.nextElementSibling;

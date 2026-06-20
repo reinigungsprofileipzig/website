@@ -49,9 +49,13 @@ p{color:var(--ink-soft)}
 .nav-cta{background:var(--accent);color:#fff!important;padding:.75rem 1.05rem!important;border-radius:.7rem}
 .nav-cta:hover{background:var(--accent-dark)}
 .menu-toggle{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:.7rem;background:#fff;color:var(--ink);font-size:1.4rem}
-.mobile-nav{display:none;position:fixed;inset:76px 0 0;z-index:45;padding:1rem;background:#fff;overflow:auto;border-top:1px solid var(--line)}
+.mobile-nav{display:none;position:fixed;inset:76px 0 0;z-index:60;padding:1rem 1rem calc(2rem + env(safe-area-inset-bottom));background:#fff;overflow-y:auto;overscroll-behavior:contain;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch}
 .mobile-nav.open{display:block}
-.mobile-nav a,.mobile-nav summary{display:block;padding:.9rem .2rem;border-bottom:1px solid var(--line);font-weight:700;list-style:none}
+.mobile-nav a,.mobile-nav summary{display:block;min-height:48px;padding:.9rem .5rem;border-bottom:1px solid var(--line);font-weight:700;list-style:none;touch-action:manipulation}
+.mobile-nav summary{position:relative;padding-right:3rem;cursor:pointer;user-select:none}
+.mobile-nav summary::-webkit-details-marker{display:none}
+.mobile-nav summary::after{content:'+';position:absolute;right:.65rem;top:50%;translate:0 -50%;font-size:1.5rem;line-height:1;color:var(--brand)}
+.mobile-nav details[open]>summary::after{content:'−'}
 .mobile-nav details div{padding:.25rem 0 .5rem 1rem}
 .mobile-nav details a{font-size:.92rem;color:var(--ink-soft)}
 .mobile-service-group{padding:.6rem 0!important;border-bottom:1px solid var(--line)}
