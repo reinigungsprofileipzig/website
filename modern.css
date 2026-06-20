@@ -76,7 +76,7 @@ p{color:var(--ink-soft)}
 .btn-secondary{border-color:rgba(255,255,255,.65);color:#fff}.btn-secondary:hover{background:rgba(255,255,255,.1)}
 .btn-brand{background:var(--brand-dark);color:#fff}.btn-brand:hover{background:var(--brand)}
 .trust-strip{position:relative;z-index:2;background:#fff;border-bottom:1px solid var(--line)}
-.trust-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;padding:1.1rem 0;margin:0;list-style:none;font-size:.82rem;font-weight:700;color:var(--brand-dark)}
+.trust-list{display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;align-items:center;gap:.7rem;padding:1.1rem 0;margin:0 auto;list-style:none;text-align:center;font-size:.82rem;font-weight:700;color:var(--brand-dark)}
 .trust-list li{display:flex;align-items:center;justify-content:center;gap:.45rem;text-align:center}
 .trust-list li:before{content:'✓';display:grid;place-items:center;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--brand-pale);color:var(--success)}
 .breadcrumb{border-bottom:1px solid var(--line);background:var(--wash)}
