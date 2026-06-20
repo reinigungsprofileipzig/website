@@ -5,15 +5,25 @@ import { categories, districts, industries, services, site } from './services.mj
 import { leipzigMap } from './leipzig-map-data.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const modernCss = await readFile(path.join(root, 'modern.css'), 'utf8');
 const esc = value => String(value).replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
 const absolute = pathname => `${site.baseUrl}${pathname}`;
 const byKey = key => services.find(service => service.key === key);
 const categoryByKey = key => categories.find(category => category.key === key);
 const compactMeta = text => text.length <= 155 ? text : `${text.slice(0, 151).replace(/\s+\S*$/, '')} …`;
+const optimizeImageMarkup = html => html.replace(/<img([^>]*?)src="(\/images\/[^\"]+\.webp)"([^>]*)>/g, (tag, before, image, after) => {
+  if (tag.includes('srcset=') || image.includes('logo-reinigungsprofi')) return tag;
+  const base = image.replace(/\.webp$/, '');
+  const isCard = tag.includes('service-card-image');
+  const sizes = isCard
+    ? '(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw'
+    : '(max-width: 819px) calc(100vw - 2rem), 45vw';
+  return `<img${before}src="${base}-768.webp" srcset="${base}-480.webp 480w, ${base}-768.webp 768w" sizes="${sizes}"${after}>`;
+});
 const writePage = async (pathname, html) => {
   const directory = pathname === '/' ? root : path.join(root, pathname.replace(/^\//, '').replace(/\/$/, ''));
   await mkdir(directory, { recursive: true });
-  await writeFile(path.join(directory, 'index.html'), html, 'utf8');
+  await writeFile(path.join(directory, 'index.html'), optimizeImageMarkup(html), 'utf8');
 };
 const titleFor = service => service.key === 'messie-wohnung-reinigung'
   ? 'Messie-Wohnung reinigen Leipzig | ReinigungsProfi'
@@ -40,7 +50,7 @@ function head({ title, description, pathname, schema, image = '/images/reinigung
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/webfonts/raleway-v36-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/modern.css">
+  <style>${modernCss}</style>
   <meta property="og:locale" content="de_DE">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ReinigungsProfi Leipzig">
@@ -67,7 +77,7 @@ function header() {
   return `<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="site-header" id="page-header">
   <div class="container header-inner">
-    <a class="logo" href="/" aria-label="ReinigungsProfi Leipzig Startseite"><img src="/images/logo-reinigungsprofi-leipzig.png" width="184" height="56" alt="ReinigungsProfi Leipzig"></a>
+    <a class="logo" href="/" aria-label="ReinigungsProfi Leipzig Startseite"><img src="/images/logo-reinigungsprofi-leipzig-384.webp" width="184" height="30" alt="ReinigungsProfi Leipzig"></a>
     <nav class="desktop-nav" aria-label="Hauptnavigation">
       <details><summary>Dienstleistungen ▾</summary><div class="mega"><a class="mega-overview" href="/dienstleistungen/">Leistungsübersicht</a>${serviceLinks}</div></details>
       <details><summary>Branchen ▾</summary><div class="industry-mega"><a class="industry-overview" href="/dienstleistungen/branchen/">Alle Branchenlösungen</a>${industryLinks}</div></details>
@@ -162,7 +172,7 @@ function contactSection(service = null) {
 function footer() {
   const topServices = ['bueroreinigung','unterhaltsreinigung','praxisreinigung','fensterreinigung','baureinigung','winterdienst'].map(byKey).filter(Boolean);
   return `<footer class="site-footer"><div class="container"><div class="footer-grid">
-    <div><a class="logo" href="/"><img src="/images/logo-reinigungsprofi-leipzig-weiss.png" width="184" height="56" loading="lazy" alt="ReinigungsProfi Leipzig"></a><p>Persönliche Gebäudereinigung und Objektbetreuung für Leipzig und Umgebung.</p></div>
+    <div><a class="logo" href="/"><img src="/images/logo-reinigungsprofi-leipzig-weiss-384.webp" width="184" height="30" loading="lazy" alt="ReinigungsProfi Leipzig"></a><p>Persönliche Gebäudereinigung und Objektbetreuung für Leipzig und Umgebung.</p></div>
     <div><h2>Leistungen</h2><ul class="footer-links">${topServices.map(service => `<li><a href="${service.path}">${esc(service.title)}</a></li>`).join('')}<li><a href="/dienstleistungen/">Alle Leistungen</a></li></ul></div>
     <div><h2>Unternehmen</h2><ul class="footer-links"><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/jobs/">Jobs</a></li><li><a href="/dienstleistungen/branchen/">Branchen</a></li><li><a href="/impressum/">Impressum</a></li><li><a href="/datenschutz/">Datenschutz</a></li></ul></div>
     <div><h2>Kontakt</h2><ul class="footer-links"><li>${site.address}</li><li>${site.postalCode} ${site.city}</li><li><a href="tel:${site.phone}">${site.phoneDisplay}</a></li><li><a href="mailto:${site.email}">${site.email}</a></li></ul></div>
