@@ -105,6 +105,8 @@ p{color:var(--ink-soft)}
 .card p{margin-bottom:1rem;font-size:.94rem}
 .card h3{overflow-wrap:anywhere}
 .service-card-image{width:calc(100% + 2.7rem);max-width:none;height:190px;margin:-1.35rem -1.35rem 1.15rem;object-fit:cover;background:var(--brand-pale)}
+.service-icon{display:grid;place-items:center;width:3rem;height:3rem;margin:-2.65rem 0 1rem;position:relative;z-index:2;border:3px solid #fff;border-radius:.9rem;background:var(--brand-dark);color:#fff;font-family:inherit;font-size:1.35rem;font-weight:800;line-height:1;box-shadow:0 8px 20px rgba(16,49,62,.18);transition:transform .2s ease,background-color .2s ease}
+.service-card:hover .service-icon{transform:translateY(-3px) rotate(-3deg);background:var(--brand)}
 .card-link{color:var(--brand-dark);font-weight:800}
 .card-link:after{content:' →'}
 .icon{display:grid;place-items:center;width:2.8rem;height:2.8rem;margin-bottom:1rem;border-radius:.85rem;background:var(--brand-pale);color:var(--brand-dark);font-size:1.25rem;font-weight:800}
@@ -245,146 +247,175 @@ details.accordion p,details.accordion ul{padding:0 1.1rem 1rem;margin:0;color:va
   <section class="hero"><div class="container hero-grid"><div><span class="eyebrow" style="color:#9fd0d7">Lokal. Persönlich. Klar organisiert.</span><h1>Ihre Reinigungsfirma in Leipzig – zuverlässig, persönlich, professionell</h1><p>ReinigungsProfi betreut Büros, Praxen, Hotels, Wohnanlagen und Gewerbeobjekte in Leipzig. Sie erhalten einen festen Ansprechpartner, ein verständliches Angebot und einen Ablauf, der zu Ihrem Objekt passt.</p><div class="actions"><a class="btn btn-primary" href="#kontakt">Kostenloses Angebot anfordern</a><a class="btn btn-secondary" href="tel:+4916096604793">Jetzt anrufen</a></div></div><div class="hero-media"><img src="/images/reinigungsfirma-leipzig-professionell-768.webp" srcset="/images/reinigungsfirma-leipzig-professionell-480.webp 480w, /images/reinigungsfirma-leipzig-professionell-672.webp 672w, /images/reinigungsfirma-leipzig-professionell-768.webp 768w" sizes="(max-width: 819px) calc(100vw - 2rem), 45vw" width="720" height="540" fetchpriority="high" alt="Professionelle Gebäudereinigung durch ReinigungsProfi Leipzig"></div></div></section><aside class="trust-strip" aria-label="Ihre Vorteile"><ul class="container trust-list"><li>Antwort in 24 Stunden</li><li>Lokal in Leipzig</li><li>Transparente Angebote</li><li>Fester Ansprechpartner</li><li>Eigene sozialversicherungspflichtig angestellte Mitarbeiter</li></ul></aside>
   <section class="section section--soft" id="leistungen"><div class="container"><div class="section-head center"><span class="eyebrow">Alle 29 Leistungen</span><h2>Unsere Reinigungsleistungen in Leipzig</h2><p>Wählen Sie direkt die passende Leistung. Jede Reinigung führt zu einer eigenen Seite mit Leistungsumfang, Ablauf, häufigen Fragen und Anfrageformular.</p></div><div class="card-grid four"><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/buero-reinigung-leipzig-service-768.webp" srcset="/images/buero-reinigung-leipzig-service-480.webp 480w, /images/buero-reinigung-leipzig-service-672.webp 672w, /images/buero-reinigung-leipzig-service-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Büroreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">▦</span>
     <h3>Büroreinigung Leipzig</h3><p>Planbare Büroreinigung für Unternehmen, Kanzleien und Agenturen – passend zu Arbeitszeiten und Flächennutzung.</p>
     <ul class="tag-list"><li>Büros</li><li>Kanzleien</li><li>Agenturen</li></ul>
     <a class="card-link" href="/buero-reinigung-leipzig/" aria-label="Mehr über Büroreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/fensterreinigung-leipzig-streifenfrei-768.webp" srcset="/images/fensterreinigung-leipzig-streifenfrei-480.webp 480w, /images/fensterreinigung-leipzig-streifenfrei-672.webp 672w, /images/fensterreinigung-leipzig-streifenfrei-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Fensterreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">◫</span>
     <h3>Fensterreinigung Leipzig</h3><p>Streifenfreie Fensterreinigung für Gewerbe, Praxen, Wohnungen und verwaltete Immobilien in Leipzig.</p>
     <ul class="tag-list"><li>Unternehmen</li><li>Praxen</li><li>Hausverwaltungen</li></ul>
     <a class="card-link" href="/fensterreinigung-leipzig/" aria-label="Mehr über Fensterreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/ferienwohnung-reinigung-leipzig-schnell-768.webp" srcset="/images/ferienwohnung-reinigung-leipzig-schnell-480.webp 480w, /images/ferienwohnung-reinigung-leipzig-schnell-672.webp 672w, /images/ferienwohnung-reinigung-leipzig-schnell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Ferienwohnung-Reinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">⌂</span>
     <h3>Ferienwohnung-Reinigung Leipzig</h3><p>Koordinierte Reinigung von Ferienwohnungen und Apartments zwischen Abreise und neuem Check-in.</p>
     <ul class="tag-list"><li>Ferienwohnungen</li><li>Business-Apartments</li><li>Monteurunterkünfte</li></ul>
     <a class="card-link" href="/ferienwohnung-reinigung-leipzig/" aria-label="Mehr über Ferienwohnung-Reinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/gastronomie-reinigung-leipzig-hygiene-768.webp" srcset="/images/gastronomie-reinigung-leipzig-hygiene-480.webp 480w, /images/gastronomie-reinigung-leipzig-hygiene-672.webp 672w, /images/gastronomie-reinigung-leipzig-hygiene-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Gastronomiereinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">♨</span>
     <h3>Gastronomiereinigung Leipzig</h3><p>Strukturierte Reinigung für Restaurants, Cafés, Bars und gastronomische Betriebsflächen.</p>
     <ul class="tag-list"><li>Restaurants</li><li>Cafés</li><li>Bars</li></ul>
     <a class="card-link" href="/gastronomie-reinigung-leipzig/" aria-label="Mehr über Gastronomiereinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/grundreinigung-leipzig-intensiv-768.webp" srcset="/images/grundreinigung-leipzig-intensiv-480.webp 480w, /images/grundreinigung-leipzig-intensiv-672.webp 672w, /images/grundreinigung-leipzig-intensiv-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Grundreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">✦</span>
     <h3>Grundreinigung Leipzig</h3><p>Gründliche, materialgerechte Intensivreinigung für Böden, Oberflächen und schwer erreichbare Bereiche.</p>
     <ul class="tag-list"><li>Gewerbeobjekte</li><li>Wohnungen</li><li>Praxen</li></ul>
     <a class="card-link" href="/grundreinigung-leipzig/" aria-label="Mehr über Grundreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="instandhaltung">
     <img class="service-card-image" src="/images/hausmeisterservice-leipzig-objektbetreuung-768.webp" srcset="/images/hausmeisterservice-leipzig-objektbetreuung-480.webp 480w, /images/hausmeisterservice-leipzig-objektbetreuung-672.webp 672w, /images/hausmeisterservice-leipzig-objektbetreuung-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Hausmeisterservice in Leipzig">
+    <span class="service-icon" aria-hidden="true">⚒</span>
     <h3>Hausmeisterservice Leipzig</h3><p>Koordinierte Objektbetreuung für Hausverwaltungen, WEG, Gewerbe und vermietete Immobilien.</p>
     <ul class="tag-list"><li>Hausverwaltungen</li><li>WEG</li><li>Gewerbeobjekte</li></ul>
     <a class="card-link" href="/hausmeisterservice-leipzig/" aria-label="Mehr über Hausmeisterservice in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/hotelreinigung-leipzig-zimmer-768.webp" srcset="/images/hotelreinigung-leipzig-zimmer-480.webp 480w, /images/hotelreinigung-leipzig-zimmer-672.webp 672w, /images/hotelreinigung-leipzig-zimmer-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Hotelreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">◇</span>
     <h3>Hotelreinigung Leipzig</h3><p>Flexible Unterstützung für Zimmer, öffentliche Bereiche und Housekeeping-Abläufe in Leipziger Hotels.</p>
     <ul class="tag-list"><li>Hotels</li><li>Pensionen</li><li>Hostels</li></ul>
     <a class="card-link" href="/hotelreinigung-leipzig/" aria-label="Mehr über Hotelreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/praxisreinigung-leipzig-hygiene-768.webp" srcset="/images/praxisreinigung-leipzig-hygiene-480.webp 480w, /images/praxisreinigung-leipzig-hygiene-672.webp 672w, /images/praxisreinigung-leipzig-hygiene-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Praxisreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">✚</span>
     <h3>Praxisreinigung Leipzig</h3><p>Objektbezogene Praxisreinigung mit klaren Hygieneplänen, dokumentierten Abläufen und festen Ansprechpartnern.</p>
     <ul class="tag-list"><li>Arztpraxen</li><li>Therapiepraxen</li><li>Zahnarztpraxen</li></ul>
     <a class="card-link" href="/praxisreinigung-leipzig/" aria-label="Mehr über Praxisreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/treppenhausreinigung-leipzig-sauber-768.webp" srcset="/images/treppenhausreinigung-leipzig-sauber-480.webp 480w, /images/treppenhausreinigung-leipzig-sauber-672.webp 672w, /images/treppenhausreinigung-leipzig-sauber-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Treppenhausreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">≋</span>
     <h3>Treppenhausreinigung Leipzig</h3><p>Regelmäßige Treppenhausreinigung für Mehrfamilienhäuser, WEG und Gewerbeimmobilien.</p>
     <ul class="tag-list"><li>Hausverwaltungen</li><li>WEG</li><li>Vermieter</li></ul>
     <a class="card-link" href="/treppenhausreinigung-leipzig/" aria-label="Mehr über Treppenhausreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/unterhaltsreinigung-leipzig-zuverlaessig-768.webp" srcset="/images/unterhaltsreinigung-leipzig-zuverlaessig-480.webp 480w, /images/unterhaltsreinigung-leipzig-zuverlaessig-672.webp 672w, /images/unterhaltsreinigung-leipzig-zuverlaessig-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Unterhaltsreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">✓</span>
     <h3>Unterhaltsreinigung Leipzig</h3><p>Wiederkehrende Reinigung für Büros, Praxen, Treppenhäuser, Handel und weitere gewerblich genutzte Flächen.</p>
     <ul class="tag-list"><li>Unternehmen</li><li>Praxen</li><li>Hausverwaltungen</li></ul>
     <a class="card-link" href="/unterhaltsreinigung-leipzig/" aria-label="Mehr über Unterhaltsreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/sanitaerreinigung-leipzig-professionell-768.webp" srcset="/images/sanitaerreinigung-leipzig-professionell-480.webp 480w, /images/sanitaerreinigung-leipzig-professionell-672.webp 672w, /images/sanitaerreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Sanitärreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">♢</span>
     <h3>Sanitärreinigung Leipzig</h3><p>Gründliche Reinigung und bedarfsgerechte Pflege gewerblicher Sanitärbereiche in Leipzig.</p>
     <ul class="tag-list"><li>Büros</li><li>Gastronomie</li><li>Fitnessstudios</li></ul>
     <a class="card-link" href="/dienstleistungen/sanitaerreinigung-leipzig/" aria-label="Mehr über Sanitärreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/teppichreinigung-leipzig-professionell-768.webp" srcset="/images/teppichreinigung-leipzig-professionell-480.webp 480w, /images/teppichreinigung-leipzig-professionell-672.webp 672w, /images/teppichreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Teppichreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">▤</span>
     <h3>Teppichreinigung Leipzig</h3><p>Professionelle Teppichreinigung für Büros, Hotels, Praxen und stark beanspruchte Laufzonen.</p>
     <ul class="tag-list"><li>Büros</li><li>Hotels</li><li>Praxen</li></ul>
     <a class="card-link" href="/dienstleistungen/teppichreinigung-leipzig/" aria-label="Mehr über Teppichreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/glasreinigung-leipzig-professionell-768.webp" srcset="/images/glasreinigung-leipzig-professionell-480.webp 480w, /images/glasreinigung-leipzig-professionell-672.webp 672w, /images/glasreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Glasreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">◈</span>
     <h3>Glasreinigung Leipzig</h3><p>Glasreinigung für Fassadenflächen, Türen, Trennwände, Überdachungen und Schaufenster.</p>
     <ul class="tag-list"><li>Gewerbeobjekte</li><li>Ladenlokale</li><li>Praxen</li></ul>
     <a class="card-link" href="/dienstleistungen/glasreinigung-leipzig/" aria-label="Mehr über Glasreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/fassadenreinigung-leipzig-professionell-768.webp" srcset="/images/fassadenreinigung-leipzig-professionell-480.webp 480w, /images/fassadenreinigung-leipzig-professionell-672.webp 672w, /images/fassadenreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Fassadenreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">▥</span>
     <h3>Fassadenreinigung Leipzig</h3><p>Objektbezogene Fassadenreinigung nach Materialprüfung, Verschmutzungsart und sicherer Zugänglichkeit.</p>
     <ul class="tag-list"><li>Gewerbeimmobilien</li><li>Hausverwaltungen</li><li>Ladenlokale</li></ul>
     <a class="card-link" href="/dienstleistungen/fassadenreinigung-leipzig/" aria-label="Mehr über Fassadenreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/hygienereinigung-leipzig-professionell-768.webp" srcset="/images/hygienereinigung-leipzig-professionell-480.webp 480w, /images/hygienereinigung-leipzig-professionell-672.webp 672w, /images/hygienereinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Hygienereinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">✚</span>
     <h3>Hygienereinigung Leipzig</h3><p>Systematische Hygienereinigung nach objektspezifischen Vorgaben für Praxen, Sanitär- und Gemeinschaftsbereiche.</p>
     <ul class="tag-list"><li>Praxen</li><li>Fitnessstudios</li><li>Bildungseinrichtungen</li></ul>
     <a class="card-link" href="/dienstleistungen/hygienereinigung-leipzig/" aria-label="Mehr über Hygienereinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/baureinigung-leipzig-professionell-768.webp" srcset="/images/baureinigung-leipzig-professionell-480.webp 480w, /images/baureinigung-leipzig-professionell-672.webp 672w, /images/baureinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Baureinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">△</span>
     <h3>Baureinigung Leipzig</h3><p>Bauzwischen-, Bauend- und Bauschlussreinigung für Neubau, Umbau und Sanierung in Leipzig.</p>
     <ul class="tag-list"><li>Bauunternehmen</li><li>Projektentwickler</li><li>Handwerksbetriebe</li></ul>
     <a class="card-link" href="/dienstleistungen/baureinigung-leipzig/" aria-label="Mehr über Baureinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="gebaeudereinigung">
     <img class="service-card-image" src="/images/containerreinigung-leipzig-professionell-768.webp" srcset="/images/containerreinigung-leipzig-professionell-480.webp 480w, /images/containerreinigung-leipzig-professionell-672.webp 672w, /images/containerreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Containerreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">▣</span>
     <h3>Containerreinigung Leipzig</h3><p>Flexible Reinigung von Baustellen-, Büro-, Aufenthalts- und Sanitärcontainern im Leipziger Raum.</p>
     <ul class="tag-list"><li>Baustellen</li><li>Veranstalter</li><li>Logistikbetriebe</li></ul>
     <a class="card-link" href="/dienstleistungen/containerreinigung-leipzig/" aria-label="Mehr über Containerreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/housekeeping-leipzig-professionell-768.webp" srcset="/images/housekeeping-leipzig-professionell-480.webp 480w, /images/housekeeping-leipzig-professionell-672.webp 672w, /images/housekeeping-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Housekeeping in Leipzig">
+    <span class="service-icon" aria-hidden="true">✧</span>
     <h3>Housekeeping Leipzig</h3><p>Housekeeping-Unterstützung für Hotels, Pensionen und Serviced Apartments in Leipzig.</p>
     <ul class="tag-list"><li>Hotels</li><li>Pensionen</li><li>Hostels</li></ul>
     <a class="card-link" href="/dienstleistungen/housekeeping-leipzig/" aria-label="Mehr über Housekeeping in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/zimmerreinigung-leipzig-professionell-768.webp" srcset="/images/zimmerreinigung-leipzig-professionell-480.webp 480w, /images/zimmerreinigung-leipzig-professionell-672.webp 672w, /images/zimmerreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Zimmerreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">▢</span>
     <h3>Zimmerreinigung Leipzig</h3><p>Zimmerreinigung nach Belegung und Objektstandard für Hotels, Pensionen und Apartments.</p>
     <ul class="tag-list"><li>Hotels</li><li>Pensionen</li><li>Hostels</li></ul>
     <a class="card-link" href="/dienstleistungen/zimmerreinigung-leipzig/" aria-label="Mehr über Zimmerreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/kuechenreinigung-leipzig-professionell-768.webp" srcset="/images/kuechenreinigung-leipzig-professionell-480.webp 480w, /images/kuechenreinigung-leipzig-professionell-672.webp 672w, /images/kuechenreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Küchenreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">♨</span>
     <h3>Küchenreinigung Leipzig</h3><p>Regelmäßige und intensive Reinigung gewerblich genutzter Küchen- und Nebenbereiche.</p>
     <ul class="tag-list"><li>Restaurants</li><li>Hotels</li><li>Kantinen</li></ul>
     <a class="card-link" href="/dienstleistungen/kuechenreinigung-leipzig/" aria-label="Mehr über Küchenreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/spueldienst-leipzig-professionell-768.webp" srcset="/images/spueldienst-leipzig-professionell-480.webp 480w, /images/spueldienst-leipzig-professionell-672.webp 672w, /images/spueldienst-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Spüldienst in Leipzig">
+    <span class="service-icon" aria-hidden="true">◉</span>
     <h3>Spüldienst Leipzig</h3><p>Unterstützender Spüldienst für Gastronomie, Hotellerie, Kantinen und Veranstaltungen.</p>
     <ul class="tag-list"><li>Restaurants</li><li>Hotels</li><li>Kantinen</li></ul>
     <a class="card-link" href="/dienstleistungen/spueldienst-leipzig/" aria-label="Mehr über Spüldienst in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="hotelreinigung">
     <img class="service-card-image" src="/images/aussenreinigung-leipzig-professionell-768.webp" srcset="/images/aussenreinigung-leipzig-professionell-480.webp 480w, /images/aussenreinigung-leipzig-professionell-672.webp 672w, /images/aussenreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Außenreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">☀</span>
     <h3>Außenreinigung Leipzig</h3><p>Regelmäßige Außenreinigung rund um Hotels, Gastronomie, Gewerbe und Wohnobjekte.</p>
     <ul class="tag-list"><li>Hotels</li><li>Gastronomie</li><li>Gewerbeobjekte</li></ul>
     <a class="card-link" href="/dienstleistungen/aussenreinigung-leipzig/" aria-label="Mehr über Außenreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="aussenanlagen">
     <img class="service-card-image" src="/images/winterdienst-leipzig-professionell-768.webp" srcset="/images/winterdienst-leipzig-professionell-480.webp 480w, /images/winterdienst-leipzig-professionell-672.webp 672w, /images/winterdienst-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Winterdienst in Leipzig">
+    <span class="service-icon" aria-hidden="true">❄</span>
     <h3>Winterdienst Leipzig</h3><p>Winterdienst für Gewerbe, Wohnanlagen und verwaltete Objekte in Leipzig nach klar definiertem Einsatzplan.</p>
     <ul class="tag-list"><li>Hausverwaltungen</li><li>WEG</li><li>Gewerbeobjekte</li></ul>
     <a class="card-link" href="/dienstleistungen/winterdienst-leipzig/" aria-label="Mehr über Winterdienst in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="aussenanlagen">
     <img class="service-card-image" src="/images/strassenreinigung-leipzig-professionell-768.webp" srcset="/images/strassenreinigung-leipzig-professionell-480.webp 480w, /images/strassenreinigung-leipzig-professionell-672.webp 672w, /images/strassenreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Straßenreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">═</span>
     <h3>Straßenreinigung Leipzig</h3><p>Reinigung privater Wege, Zufahrten, Parkflächen und objektbezogener Außenbereiche in Leipzig.</p>
     <ul class="tag-list"><li>Gewerbeparks</li><li>Hausverwaltungen</li><li>Logistikstandorte</li></ul>
     <a class="card-link" href="/dienstleistungen/strassenreinigung-leipzig/" aria-label="Mehr über Straßenreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="aussenanlagen">
     <img class="service-card-image" src="/images/gruenanlagenpflege-leipzig-professionell-768.webp" srcset="/images/gruenanlagenpflege-leipzig-professionell-480.webp 480w, /images/gruenanlagenpflege-leipzig-professionell-672.webp 672w, /images/gruenanlagenpflege-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Grünanlagenpflege in Leipzig">
+    <span class="service-icon" aria-hidden="true">♣</span>
     <h3>Grünanlagenpflege Leipzig</h3><p>Laufende Grünpflege für Wohnanlagen, Gewerbegrundstücke und kleinere Außenflächen.</p>
     <ul class="tag-list"><li>Hausverwaltungen</li><li>WEG</li><li>Gewerbeobjekte</li></ul>
     <a class="card-link" href="/dienstleistungen/gruenanlagenpflege-leipzig/" aria-label="Mehr über Grünanlagenpflege in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="aussenanlagen">
     <img class="service-card-image" src="/images/solaranlagenreinigung-leipzig-professionell-768.webp" srcset="/images/solaranlagenreinigung-leipzig-professionell-480.webp 480w, /images/solaranlagenreinigung-leipzig-professionell-672.webp 672w, /images/solaranlagenreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Solaranlagenreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">☼</span>
     <h3>Solaranlagenreinigung Leipzig</h3><p>Bedarfsgerechte Reinigung zugänglicher Photovoltaik- und Solarmodule im Leipziger Raum.</p>
     <ul class="tag-list"><li>Gewerbebetriebe</li><li>Hausverwaltungen</li><li>private Eigentümer</li></ul>
     <a class="card-link" href="/dienstleistungen/solaranlagenreinigung-leipzig/" aria-label="Mehr über Solaranlagenreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="spezialreinigung">
     <img class="service-card-image" src="/images/verkehrsmittelreinigung-leipzig-professionell-768.webp" srcset="/images/verkehrsmittelreinigung-leipzig-professionell-480.webp 480w, /images/verkehrsmittelreinigung-leipzig-professionell-672.webp 672w, /images/verkehrsmittelreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Verkehrsmittelreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">⇄</span>
     <h3>Verkehrsmittelreinigung Leipzig</h3><p>Planbare Innenreinigung von Kleinbussen, Transportern und gewerblichen Fahrzeugen am vereinbarten Standort.</p>
     <ul class="tag-list"><li>Shuttle-Dienste</li><li>Pflegedienste</li><li>Handwerksbetriebe</li></ul>
     <a class="card-link" href="/dienstleistungen/verkehrsmittelreinigung-leipzig/" aria-label="Mehr über Verkehrsmittelreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="spezialreinigung">
     <img class="service-card-image" src="/images/messie-wohnung-reinigung-leipzig-professionell-768.webp" srcset="/images/messie-wohnung-reinigung-leipzig-professionell-480.webp 480w, /images/messie-wohnung-reinigung-leipzig-professionell-672.webp 672w, /images/messie-wohnung-reinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Reinigung von Messie-Wohnungen in Leipzig">
+    <span class="service-icon" aria-hidden="true">⟳</span>
     <h3>Reinigung von Messie-Wohnungen Leipzig</h3><p>Besichtigungsbasierte Reinigung stark belasteter Wohnungen in Leipzig – respektvoll, planbar und ohne vorschnelle Versprechen.</p>
     <ul class="tag-list"><li>Privatpersonen</li><li>Angehörige</li><li>Betreuer</li></ul>
     <a class="card-link" href="/dienstleistungen/messie-wohnung-reinigung-leipzig/" aria-label="Mehr über Reinigung von Messie-Wohnungen in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="spezialreinigung">
     <img class="service-card-image" src="/images/vernebelungs-desinfektion-leipzig-professionell-768.webp" srcset="/images/vernebelungs-desinfektion-leipzig-professionell-480.webp 480w, /images/vernebelungs-desinfektion-leipzig-professionell-672.webp 672w, /images/vernebelungs-desinfektion-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Vernebelungs-Desinfektion in Leipzig">
+    <span class="service-icon" aria-hidden="true">✣</span>
     <h3>Vernebelungs-Desinfektion Leipzig</h3><p>Beratung und objektbezogene Prüfung, ob eine Vernebelungs-Desinfektion sinnvoll und fachgerecht umsetzbar ist.</p>
     <ul class="tag-list"><li>Gewerbeobjekte</li><li>Gemeinschaftsbereiche</li><li>Praxen nach Freigabe</li></ul>
     <a class="card-link" href="/dienstleistungen/vernebelungs-desinfektion-leipzig/" aria-label="Mehr über Vernebelungs-Desinfektion in Leipzig">Leistung ansehen</a>

@@ -105,6 +105,8 @@ p{color:var(--ink-soft)}
 .card p{margin-bottom:1rem;font-size:.94rem}
 .card h3{overflow-wrap:anywhere}
 .service-card-image{width:calc(100% + 2.7rem);max-width:none;height:190px;margin:-1.35rem -1.35rem 1.15rem;object-fit:cover;background:var(--brand-pale)}
+.service-icon{display:grid;place-items:center;width:3rem;height:3rem;margin:-2.65rem 0 1rem;position:relative;z-index:2;border:3px solid #fff;border-radius:.9rem;background:var(--brand-dark);color:#fff;font-family:inherit;font-size:1.35rem;font-weight:800;line-height:1;box-shadow:0 8px 20px rgba(16,49,62,.18);transition:transform .2s ease,background-color .2s ease}
+.service-card:hover .service-icon{transform:translateY(-3px) rotate(-3deg);background:var(--brand)}
 .card-link{color:var(--brand-dark);font-weight:800}
 .card-link:after{content:' →'}
 .icon{display:grid;place-items:center;width:2.8rem;height:2.8rem;margin-bottom:1rem;border-radius:.85rem;background:var(--brand-pale);color:var(--brand-dark);font-size:1.25rem;font-weight:800}
@@ -245,16 +247,19 @@ details.accordion p,details.accordion ul{padding:0 1.1rem 1rem;margin:0;color:va
   <section class="hero hero--simple"><div class="container hero-grid"><div><span class="eyebrow" style="color:#9fd0d7">Leistungen in Leipzig</span><h1>Spezialreinigung Leipzig – Besondere Reinigung mit klaren Grenzen</h1><p>Spezialfälle benötigen eine gründliche Einschätzung, realistische Aussagen und gegebenenfalls die Zusammenarbeit mit geeigneten Fachstellen.</p><div class="actions"><a class="btn btn-primary" href="#leistungen">Leistungen ansehen</a><a class="btn btn-secondary" href="#kontakt">Angebot anfordern</a></div></div></div></section><aside class="trust-strip" aria-label="Ihre Vorteile"><ul class="container trust-list"><li>Antwort in 24 Stunden</li><li>Lokal in Leipzig</li><li>Transparente Angebote</li><li>Fester Ansprechpartner</li><li>Eigene sozialversicherungspflichtig angestellte Mitarbeiter</li></ul></aside>
   <section class="section" id="leistungen"><div class="container"><div class="section-head"><span class="eyebrow">Unser Angebot</span><h2>Spezialreinigung im Überblick</h2><p>Sorgfältig geplante Einsätze für besondere Verschmutzungen und Anforderungen. Jede Leistung wird anhand Ihres Objekts kalkuliert und vor Beginn klar beschrieben.</p></div><div class="card-grid three"><article class="card service-card" data-category="spezialreinigung">
     <img class="service-card-image" src="/images/verkehrsmittelreinigung-leipzig-professionell-768.webp" srcset="/images/verkehrsmittelreinigung-leipzig-professionell-480.webp 480w, /images/verkehrsmittelreinigung-leipzig-professionell-672.webp 672w, /images/verkehrsmittelreinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Verkehrsmittelreinigung in Leipzig">
+    <span class="service-icon" aria-hidden="true">⇄</span>
     <h3>Verkehrsmittelreinigung Leipzig</h3><p>Planbare Innenreinigung von Kleinbussen, Transportern und gewerblichen Fahrzeugen am vereinbarten Standort.</p>
     <ul class="tag-list"><li>Shuttle-Dienste</li><li>Pflegedienste</li><li>Handwerksbetriebe</li></ul>
     <a class="card-link" href="/dienstleistungen/verkehrsmittelreinigung-leipzig/" aria-label="Mehr über Verkehrsmittelreinigung in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="spezialreinigung">
     <img class="service-card-image" src="/images/messie-wohnung-reinigung-leipzig-professionell-768.webp" srcset="/images/messie-wohnung-reinigung-leipzig-professionell-480.webp 480w, /images/messie-wohnung-reinigung-leipzig-professionell-672.webp 672w, /images/messie-wohnung-reinigung-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Reinigung von Messie-Wohnungen in Leipzig">
+    <span class="service-icon" aria-hidden="true">⟳</span>
     <h3>Reinigung von Messie-Wohnungen Leipzig</h3><p>Besichtigungsbasierte Reinigung stark belasteter Wohnungen in Leipzig – respektvoll, planbar und ohne vorschnelle Versprechen.</p>
     <ul class="tag-list"><li>Privatpersonen</li><li>Angehörige</li><li>Betreuer</li></ul>
     <a class="card-link" href="/dienstleistungen/messie-wohnung-reinigung-leipzig/" aria-label="Mehr über Reinigung von Messie-Wohnungen in Leipzig">Leistung ansehen</a>
   </article><article class="card service-card" data-category="spezialreinigung">
     <img class="service-card-image" src="/images/vernebelungs-desinfektion-leipzig-professionell-768.webp" srcset="/images/vernebelungs-desinfektion-leipzig-professionell-480.webp 480w, /images/vernebelungs-desinfektion-leipzig-professionell-672.webp 672w, /images/vernebelungs-desinfektion-leipzig-professionell-768.webp 768w" sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw" width="480" height="320" loading="lazy" alt="Vernebelungs-Desinfektion in Leipzig">
+    <span class="service-icon" aria-hidden="true">✣</span>
     <h3>Vernebelungs-Desinfektion Leipzig</h3><p>Beratung und objektbezogene Prüfung, ob eine Vernebelungs-Desinfektion sinnvoll und fachgerecht umsetzbar ist.</p>
     <ul class="tag-list"><li>Gewerbeobjekte</li><li>Gemeinschaftsbereiche</li><li>Praxen nach Freigabe</li></ul>
     <a class="card-link" href="/dienstleistungen/vernebelungs-desinfektion-leipzig/" aria-label="Mehr über Vernebelungs-Desinfektion in Leipzig">Leistung ansehen</a>

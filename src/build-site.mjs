@@ -106,9 +106,14 @@ function breadcrumb() {
   return '';
 }
 
+const serviceIcons = {
+  bueroreinigung: '▦', fensterreinigung: '◫', ferienwohnung: '⌂', gastronomie: '♨', grundreinigung: '✦', hausmeister: '⚒', hotelreinigung: '◇', praxisreinigung: '✚', treppenhaus: '≋', unterhaltsreinigung: '✓', sanitaerreinigung: '♢', teppichreinigung: '▤', glasreinigung: '◈', fassadenreinigung: '▥', hygienereinigung: '✚', baureinigung: '△', containerreinigung: '▣', housekeeping: '✧', zimmerreinigung: '▢', kuechenreinigung: '♨', spueldienst: '◉', aussenreinigung: '☀', winterdienst: '❄', strassenreinigung: '═', gruenanlagenpflege: '♣', solaranlagenreinigung: '☼', verkehrsmittelreinigung: '⇄', 'messie-wohnung-reinigung': '⟳', 'vernebelungs-desinfektion': '✣'
+};
+
 function serviceCard(service) {
   return `<article class="card service-card" data-category="${service.category}">
     <img class="service-card-image" src="${service.image || '/images/reinigungsfirma-leipzig-professionell.webp'}" width="480" height="320" loading="lazy" alt="${esc(service.title)} in Leipzig">
+    <span class="service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>
     <h3>${esc(service.title)} Leipzig</h3><p>${esc(service.short)}</p>
     <ul class="tag-list">${service.audiences.slice(0, 3).map(item => `<li>${esc(item)}</li>`).join('')}</ul>
     <a class="card-link" href="${service.path}" aria-label="Mehr über ${esc(service.title)} in Leipzig">Leistung ansehen</a>
