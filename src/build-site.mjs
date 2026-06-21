@@ -24,7 +24,8 @@ const optimizeImageMarkup = html => html.replace(/<img([^>]*?)src="(\/images\/[^
 const writePage = async (pathname, html) => {
   const directory = pathname === '/' ? root : path.join(root, pathname.replace(/^\//, '').replace(/\/$/, ''));
   await mkdir(directory, { recursive: true });
-  await writeFile(path.join(directory, 'index.html'), optimizeImageMarkup(html), 'utf8');
+  const enhancedHtml = optimizeImageMarkup(html).replace('<h2>Verlässlich organisiert, persönlich betreut</h2>', '<h2 class="animated-service-title">Verlässlich organisiert, persönlich betreut</h2>');
+  await writeFile(path.join(directory, 'index.html'), enhancedHtml, 'utf8');
 };
 const titleFor = service => service.key === 'messie-wohnung-reinigung'
   ? 'Messie-Wohnung reinigen Leipzig | ReinigungsProfi'

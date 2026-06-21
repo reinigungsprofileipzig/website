@@ -29,6 +29,11 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.025em}
 h1{font-size:clamp(2.25rem,7vw,4.65rem);margin-bottom:1.25rem}
 h2{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem}
 h3{font-size:1.2rem}
+.animated-service-title{position:relative;display:inline-block;padding-bottom:.35rem;animation:title-rise .75s cubic-bezier(.2,.75,.25,1) both}
+.animated-service-title::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:3px;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--accent),var(--brand));background-size:200% 100%;transform-origin:left;animation:title-line 1s .25s cubic-bezier(.2,.75,.25,1) both,title-shimmer 4s 1.25s linear infinite}
+@keyframes title-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes title-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes title-shimmer{to{background-position:200% 0}}
 p{color:var(--ink-soft)}
 .container{width:min(calc(100% - 2rem),var(--max));margin-inline:auto}
 .narrow{width:min(calc(100% - 2rem),820px);margin-inline:auto}
