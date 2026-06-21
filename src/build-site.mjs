@@ -73,7 +73,7 @@ function header() {
     return `<div class="mega-group"><a class="mega-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${items.map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(menuLabel(service))}</a>`).join('')}</div>`;
   }).join('');
   const mobileServices = categories.map(category => `<div class="mobile-service-group"><a class="mobile-service-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${services.filter(service => service.category === category.key).map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(menuLabel(service))}</a>`).join('')}</div>`).join('');
-  const industryLinks = industries.map(industry => `<a href="${industry.path}">${esc(industry.title)}</a>`).join('');
+  const industryLinks = industries.map(industry => `<a href="${industry.path}"><span class="menu-industry-icon" aria-hidden="true">${industryIcons[industry.key] || '◇'}</span>${esc(industry.title)}</a>`).join('');
   return `<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="site-header" id="page-header">
   <div class="container header-inner">
@@ -108,6 +108,9 @@ function breadcrumb() {
 
 const serviceIcons = {
   bueroreinigung: '▦', fensterreinigung: '◫', ferienwohnung: '⌂', gastronomie: '♨', grundreinigung: '✦', hausmeister: '⚒', hotelreinigung: '◇', praxisreinigung: '✚', treppenhaus: '≋', unterhaltsreinigung: '✓', sanitaerreinigung: '♢', teppichreinigung: '▤', glasreinigung: '◈', fassadenreinigung: '▥', hygienereinigung: '✚', baureinigung: '△', containerreinigung: '▣', housekeeping: '✧', zimmerreinigung: '▢', kuechenreinigung: '♨', spueldienst: '◉', aussenreinigung: '☀', winterdienst: '❄', strassenreinigung: '═', gruenanlagenpflege: '♣', solaranlagenreinigung: '☼', verkehrsmittelreinigung: '⇄', 'messie-wohnung-reinigung': '⟳'
+};
+const industryIcons = {
+  arztpraxen: '✚', bildung: '▥', bueros: '▦', einzelhandel: '◇', fitness: '◎', 'gastronomie-hotels': '♨', hausverwaltungen: '⌂', 'pflege-soziales': '♡', 'industrie-produktion': '⚙', 'logistik-lager': '⇄', 'auto-werkstatt': '◫', 'oeffentliche-einrichtungen': '▣', 'kultur-veranstaltung': '✦', 'bau-handwerk': '△', lebensmittelhandel: '♧'
 };
 
 function serviceCard(service) {
@@ -283,7 +286,7 @@ function overviewPage() {
 
 function industryNavigation(activeKey = '') {
   const heading = activeKey ? 'Weitere Branchenlösungen in Leipzig' : 'Branchenreinigung nach Ihrem Bedarf';
-  return `<section class="industry-navigation-section" id="branchen"><div class="container"><div class="section-head center"><span class="eyebrow">Branchen-Navigation</span><h2>${heading}</h2><p>Wählen Sie Ihre Branche. Jede Lösung verbindet passende Reinigungsleistungen, Intervalle und Abläufe für den jeweiligen Objektalltag.</p></div><nav class="industry-nav-grid" aria-label="Branchenlösungen">${industries.map(item => `<a class="industry-nav-card${item.key === activeKey ? ' active' : ''}" href="${item.path}"${item.key === activeKey ? ' aria-current="page"' : ''}><strong>${esc(item.title)}</strong><span>${esc(item.short)}</span></a>`).join('')}</nav></div></section>`;
+  return `<section class="industry-navigation-section" id="branchen"><div class="container"><div class="section-head center"><span class="eyebrow">Branchen-Navigation</span><h2>${heading}</h2><p>Wählen Sie Ihre Branche. Jede Lösung verbindet passende Reinigungsleistungen, Intervalle und Abläufe für den jeweiligen Objektalltag.</p></div><nav class="industry-nav-grid" aria-label="Branchenlösungen">${industries.map(item => `<a class="industry-nav-card${item.key === activeKey ? ' active' : ''}" href="${item.path}"${item.key === activeKey ? ' aria-current="page"' : ''}><span class="industry-icon" aria-hidden="true">${industryIcons[item.key] || '◇'}</span><strong>${esc(item.title)}</strong><span>${esc(item.short)}</span></a>`).join('')}</nav></div></section>`;
 }
 
 function industriesPage() {
