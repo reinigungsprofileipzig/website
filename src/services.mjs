@@ -201,7 +201,7 @@ export const services = [
     issues: ['Kreuzkontamination zwischen Bereichen', 'unterschiedliche Vorgaben und Mittel', 'lückenlose, verständliche Arbeitspläne'],
     intervals: ['täglich', 'mehrmals täglich', 'nach Hygieneplan', 'bei besonderem Anlass'],
     approach: 'Wir setzen die Vorgaben des Auftraggebers objektbezogen um; medizinische Sterilisation oder behördlich angeordnete Spezialmaßnahmen sind gesondert zu prüfen.',
-    related: ['praxisreinigung', 'sanitaerreinigung', 'vernebelungs-desinfektion', 'unterhaltsreinigung']
+    related: ['praxisreinigung', 'sanitaerreinigung', 'hygienereinigung', 'unterhaltsreinigung']
   }),
   make('baureinigung', 'Baureinigung', 'gebaeudereinigung', {
     priority: 'high', image: '/images/baureinigung-leipzig-professionell.webp', claim: 'Saubere Baustellen vom Baufortschritt bis zur Übergabe',
@@ -332,16 +332,6 @@ export const services = [
     intervals: ['als einmaliges Projekt', 'in mehreren Etappen', 'mit Nachreinigung', 'nach vorangegangener Räumung'],
     approach: 'Bei Schimmel, Schädlingsbefall, Gefahrstoffen, Leichenfund oder biologischer Kontamination werden zuständige Fachbetriebe beziehungsweise Behörden einbezogen.',
     related: ['grundreinigung', 'hygienereinigung', 'containerreinigung', 'sanitaerreinigung']
-  }),
-  make('vernebelungs-desinfektion', 'Vernebelungs-Desinfektion', 'spezialreinigung', {
-    key: 'vernebelungs-desinfektion', priority: 'medium', image: '/images/vernebelungs-desinfektion-leipzig-professionell.webp', claim: 'Desinfektionsmaßnahmen nur nach fachlicher Prüfung von Anlass, Mittel und Raum',
-    short: 'Beratung und objektbezogene Prüfung, ob eine Vernebelungs-Desinfektion sinnvoll und fachgerecht umsetzbar ist.',
-    audiences: ['Gewerbeobjekte', 'Gemeinschaftsbereiche', 'Praxen nach Freigabe', 'Betreiber mit Hygieneplan'],
-    tasks: ['Anlass und Ziel der Maßnahme klären', 'Raumvolumen und Oberflächen prüfen', 'geeignetes zugelassenes Mittel auswählen', 'Nutzer- und Arbeitsschutz organisieren', 'Einwirk- und Lüftungszeiten planen', 'Maßnahme nachvollziehbar dokumentieren'],
-    issues: ['ungeeignete Mittel oder Oberflächen', 'notwendige Sperr- und Lüftungszeiten', 'Abgrenzung zur regulären Flächendesinfektion'],
-    intervals: ['nur anlassbezogen', 'nach fachlicher Bewertung', 'als Ergänzung eines Hygieneplans', 'mit dokumentierter Freigabe'],
-    approach: 'Eine Raumvernebelung ersetzt keine gründliche Reinigung und erfolgt nicht pauschal; rechtliche Vorgaben, Biozidzulassung und Arbeitsschutz sind vor Auftrag verbindlich zu prüfen.',
-    related: ['hygienereinigung', 'praxisreinigung', 'sanitaerreinigung', 'grundreinigung']
   })
 ];
 

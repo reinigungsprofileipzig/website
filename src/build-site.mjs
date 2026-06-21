@@ -10,6 +10,7 @@ const esc = value => String(value).replace(/[&<>"]/g, char => ({ '&': '&amp;', '
 const absolute = pathname => `${site.baseUrl}${pathname}`;
 const byKey = key => services.find(service => service.key === key);
 const categoryByKey = key => categories.find(category => category.key === key);
+const menuLabel = service => service.key === 'ferienwohnung' ? 'Ferienwohnungen' : service.title;
 const compactMeta = text => text.length <= 155 ? text : `${text.slice(0, 151).replace(/\s+\S*$/, '')} …`;
 const optimizeImageMarkup = html => html.replace(/<img([^>]*?)src="(\/images\/[^\"]+\.webp)"([^>]*)>/g, (tag, before, image, after) => {
   if (tag.includes('srcset=') || image.includes('logo-reinigungsprofi')) return tag;
@@ -69,9 +70,9 @@ function head({ title, description, pathname, schema, image = '/images/reinigung
 function header() {
   const serviceLinks = categories.map(category => {
     const items = services.filter(service => service.category === category.key);
-    return `<div class="mega-group"><a class="mega-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${items.map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(service.title)}</a>`).join('')}</div>`;
+    return `<div class="mega-group"><a class="mega-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${items.map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(menuLabel(service))}</a>`).join('')}</div>`;
   }).join('');
-  const mobileServices = categories.map(category => `<div class="mobile-service-group"><a class="mobile-service-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${services.filter(service => service.category === category.key).map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(service.title)}</a>`).join('')}</div>`).join('');
+  const mobileServices = categories.map(category => `<div class="mobile-service-group"><a class="mobile-service-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${services.filter(service => service.category === category.key).map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(menuLabel(service))}</a>`).join('')}</div>`).join('');
   const industryLinks = industries.map(industry => `<a href="${industry.path}">${esc(industry.title)}</a>`).join('');
   return `<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="site-header" id="page-header">
@@ -106,7 +107,7 @@ function breadcrumb() {
 }
 
 const serviceIcons = {
-  bueroreinigung: '▦', fensterreinigung: '◫', ferienwohnung: '⌂', gastronomie: '♨', grundreinigung: '✦', hausmeister: '⚒', hotelreinigung: '◇', praxisreinigung: '✚', treppenhaus: '≋', unterhaltsreinigung: '✓', sanitaerreinigung: '♢', teppichreinigung: '▤', glasreinigung: '◈', fassadenreinigung: '▥', hygienereinigung: '✚', baureinigung: '△', containerreinigung: '▣', housekeeping: '✧', zimmerreinigung: '▢', kuechenreinigung: '♨', spueldienst: '◉', aussenreinigung: '☀', winterdienst: '❄', strassenreinigung: '═', gruenanlagenpflege: '♣', solaranlagenreinigung: '☼', verkehrsmittelreinigung: '⇄', 'messie-wohnung-reinigung': '⟳', 'vernebelungs-desinfektion': '✣'
+  bueroreinigung: '▦', fensterreinigung: '◫', ferienwohnung: '⌂', gastronomie: '♨', grundreinigung: '✦', hausmeister: '⚒', hotelreinigung: '◇', praxisreinigung: '✚', treppenhaus: '≋', unterhaltsreinigung: '✓', sanitaerreinigung: '♢', teppichreinigung: '▤', glasreinigung: '◈', fassadenreinigung: '▥', hygienereinigung: '✚', baureinigung: '△', containerreinigung: '▣', housekeeping: '✧', zimmerreinigung: '▢', kuechenreinigung: '♨', spueldienst: '◉', aussenreinigung: '☀', winterdienst: '❄', strassenreinigung: '═', gruenanlagenpflege: '♣', solaranlagenreinigung: '☼', verkehrsmittelreinigung: '⇄', 'messie-wohnung-reinigung': '⟳'
 };
 
 function serviceCard(service) {
