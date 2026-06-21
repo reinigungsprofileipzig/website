@@ -381,6 +381,22 @@ function homePage() {
 </main>${footer()}</body></html>`;
 }
 
+function notFoundPage() {
+  const pathname = '/404.html';
+  const title = 'Seite nicht gefunden | ReinigungsProfi Leipzig';
+  const description = 'Die gewünschte Seite wurde nicht gefunden. Finden Sie direkt die passende Reinigungsleistung oder kontaktieren Sie ReinigungsProfi Leipzig.';
+  const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url: absolute(pathname), isPartOf: { '@id': `${site.baseUrl}/#website` } };
+  const categoryLinks = categories.map(category => `<a href="/dienstleistungen/${category.key}/"><strong>${esc(category.label)}</strong><span>${services.filter(service => service.category === category.key).length} Leistungen</span></a>`).join('');
+  const serviceLinks = categories.map(category => `<section class="service-category-group"><div class="section-head"><span class="eyebrow">${esc(category.label)}</span><h2>${esc(category.label)}</h2><p>${esc(category.intro)}</p></div><div class="related">${services.filter(service => service.category === category.key).map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(service.title)} Leipzig</a>`).join('')}</div></section>`).join('');
+  return `${head({ title, description, pathname, schema, robots: 'noindex,follow' })}<body>${header()}<main id="main">
+  <section class="hero hero--simple"><div class="container hero-grid"><div><span class="eyebrow" style="color:#9fd0d7">Fehler 404</span><h1>Diese Seite konnten wir leider nicht finden</h1><p>Vielleicht wurde der Link geändert oder die Adresse enthält einen Tippfehler. Über die folgenden Bereiche gelangen Sie direkt zu unseren Reinigungsleistungen für Leipzig.</p><div class="actions"><a class="btn btn-primary" href="/">Zur Startseite</a><a class="btn btn-secondary" href="#leistungen">Leistung auswählen</a></div></div></div></section>${trustStrip()}
+  <section class="section"><div class="container"><div class="section-head center"><span class="eyebrow">Schnelle Orientierung</span><h2>Was möchten Sie reinigen lassen?</h2><p>Wählen Sie eine Kategorie oder sehen Sie weiter unten alle Leistungen einzeln.</p></div><nav class="service-index" aria-label="Leistungskategorien">${categoryLinks}</nav></div></section>
+  <section class="section section--soft" id="leistungen"><div class="container"><div class="section-head center"><span class="eyebrow">Alle ${services.length} Leistungen</span><h2>Direkt zur passenden Reinigungsleistung</h2><p>Jede Leistung führt zu einer ausführlichen Seite mit Ablauf, Leistungsumfang, FAQ und Anfrageformular.</p></div>${serviceLinks}</div></section>
+  ${industryNavigation()}
+  <section class="section" id="kontakt"><div class="container content-grid"><div class="content-copy"><span class="eyebrow">Persönlich erreichbar</span><h2>Sie sind unsicher, welche Leistung passt?</h2><p>Beschreiben Sie kurz Ihr Objekt, die ungefähre Fläche und den gewünschten Turnus. Wir helfen Ihnen, die passende Reinigung einzuordnen.</p><p><strong>Telefon:</strong> <a href="tel:${site.phone}">${site.phoneDisplay}</a><br><strong>E-Mail:</strong> <a href="mailto:${site.email}">${site.email}</a></p><div class="actions"><a class="btn btn-brand" href="tel:${site.phone}">Jetzt anrufen</a><a class="btn btn-primary" href="/#kontakt">Anfrage senden</a></div></div><aside class="aside-box"><h3>Beliebte Einstiege</h3><ul class="check-list"><li><a href="/buero-reinigung-leipzig/">Büroreinigung Leipzig</a></li><li><a href="/unterhaltsreinigung-leipzig/">Unterhaltsreinigung Leipzig</a></li><li><a href="/fensterreinigung-leipzig/">Fensterreinigung Leipzig</a></li><li><a href="/praxisreinigung-leipzig/">Praxisreinigung Leipzig</a></li><li><a href="/dienstleistungen/">Vollständige Leistungsübersicht</a></li></ul></aside></div></section>
+  </main>${footer()}</body></html>`;
+}
+
 async function build() {
   await writePage('/', homePage());
   await writePage('/dienstleistungen/', overviewPage());
@@ -390,6 +406,7 @@ async function build() {
   for (const industry of industries) await writePage(industry.path, industryPage(industry));
   await writePage('/ueber-uns/', aboutPage().replace('Seit 2020 in Leipzig', 'Inhabergeführt'));
   await writePage('/jobs/', jobsPage().replace('</section><section class="section">', `</section>${trustStrip()}<section class="section">`));
+  await writeFile(path.join(root, '404.html'), optimizeImageMarkup(notFoundPage()), 'utf8');
 
   await mkdir(path.join(root, 'data'), { recursive: true });
   await writeFile(path.join(root, 'data', 'services.json'), JSON.stringify({ categories, services, districts, industries }, null, 2), 'utf8');
