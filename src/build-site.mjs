@@ -49,7 +49,6 @@ function head({ title, description, pathname, schema, image = '/images/reinigung
   <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preload" href="/webfonts/raleway-v36-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <style>${modernCss}</style>
   <meta property="og:locale" content="de_DE">
   <meta property="og:type" content="website">
