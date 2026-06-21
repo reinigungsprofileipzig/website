@@ -28,9 +28,10 @@ p{color:var(--ink-soft)}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(219,230,232,.85);backdrop-filter:blur(14px)}
 .header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .logo img{width:auto;height:50px}
-.desktop-nav{display:none;align-items:center;gap:1.35rem;font-family:inherit;font-weight:700;font-size:1rem;line-height:1.4;letter-spacing:-.01em}
+.desktop-nav{display:none;align-items:center;gap:1.2rem;font-family:inherit;font-weight:700;font-size:1rem;line-height:1.4;letter-spacing:-.01em;white-space:nowrap}
 .desktop-nav>a,.desktop-nav summary{padding:.7rem 0;list-style:none;cursor:pointer}
 .nav-icon{display:inline-flex;align-items:center;justify-content:center;width:1.35em;margin-right:.38rem;color:var(--brand);font-family:inherit;font-size:1.05em;font-weight:800;line-height:1}
+.desktop-nav .nav-icon{display:none}
 .nav-cta .nav-icon{color:inherit}
 .desktop-nav summary::-webkit-details-marker{display:none}
 .desktop-nav details{position:relative}
