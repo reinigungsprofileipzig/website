@@ -28,10 +28,12 @@ p{color:var(--ink-soft)}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(219,230,232,.85);backdrop-filter:blur(14px)}
 .header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .logo img{width:auto;height:50px}
-.desktop-nav{display:none;align-items:center;gap:1.2rem;font-family:inherit;font-weight:700;font-size:1rem;line-height:1.4;letter-spacing:-.01em;white-space:nowrap}
+.desktop-nav{display:none;align-items:center;gap:.8rem;font-family:inherit;font-weight:700;font-size:.94rem;line-height:1.4;letter-spacing:-.01em;white-space:nowrap}
 .desktop-nav>a,.desktop-nav summary{padding:.7rem 0;list-style:none;cursor:pointer}
 .nav-icon{display:inline-flex;align-items:center;justify-content:center;width:1.35em;margin-right:.38rem;color:var(--brand);font-family:inherit;font-size:1.05em;font-weight:800;line-height:1}
-.desktop-nav .nav-icon{display:none}
+.desktop-nav .nav-icon{display:inline-flex;width:.9em;margin-right:.18rem;font-size:.88em}
+.menu-service-icon{display:inline-flex;align-items:center;justify-content:center;width:1.55rem;height:1.55rem;margin-right:.45rem;border-radius:.42rem;background:var(--brand-pale);color:var(--brand-dark);font-family:inherit;font-size:.82rem;font-weight:800;line-height:1;vertical-align:middle;transition:background-color .16s ease,color .16s ease,transform .16s ease}
+.mega a:hover .menu-service-icon,.mega a:focus-visible .menu-service-icon,.mobile-nav a:hover .menu-service-icon{background:var(--brand);color:#fff;transform:rotate(-4deg)}
 .nav-cta .nav-icon{color:inherit}
 .desktop-nav summary::-webkit-details-marker{display:none}
 .desktop-nav details{position:relative}

@@ -70,9 +70,9 @@ function head({ title, description, pathname, schema, image = '/images/reinigung
 function header() {
   const serviceLinks = categories.map(category => {
     const items = services.filter(service => service.category === category.key);
-    return `<div class="mega-group"><a class="mega-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${items.map(service => `<a href="${service.path}">${esc(service.title)}</a>`).join('')}</div>`;
+    return `<div class="mega-group"><a class="mega-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${items.map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(service.title)}</a>`).join('')}</div>`;
   }).join('');
-  const mobileServices = categories.map(category => `<div class="mobile-service-group"><a class="mobile-service-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${services.filter(service => service.category === category.key).map(service => `<a href="${service.path}">${esc(service.title)}</a>`).join('')}</div>`).join('');
+  const mobileServices = categories.map(category => `<div class="mobile-service-group"><a class="mobile-service-heading" href="/dienstleistungen/${category.key}/">${esc(category.label)}</a>${services.filter(service => service.category === category.key).map(service => `<a href="${service.path}"><span class="menu-service-icon" aria-hidden="true">${serviceIcons[service.key] || '✦'}</span>${esc(service.title)}</a>`).join('')}</div>`).join('');
   const industryLinks = industries.map(industry => `<a href="${industry.path}">${esc(industry.title)}</a>`).join('');
   return `<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="site-header" id="page-header">
