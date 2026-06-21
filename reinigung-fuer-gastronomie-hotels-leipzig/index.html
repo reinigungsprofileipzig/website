@@ -55,7 +55,7 @@ p{color:var(--ink-soft)}
 .desktop-nav .nav-icon{display:inline-flex;width:1em;margin-right:.2rem;font-size:.94em}
 .menu-service-icon{display:inline-flex;align-items:center;justify-content:center;width:1.7rem;height:1.7rem;margin-right:.5rem;border:1px solid #b8d4d8;border-radius:.5rem;background:#f8fcfc;color:var(--brand);font-family:inherit;font-size:1rem;font-weight:500;line-height:1;vertical-align:middle;box-shadow:0 3px 8px rgba(16,49,62,.06);transition:background-color .16s ease,color .16s ease,border-color .16s ease,transform .16s ease}
 .mega a:hover .menu-service-icon,.mega a:focus-visible .menu-service-icon,.mobile-nav a:hover .menu-service-icon{border-color:var(--brand);background:var(--brand-pale);color:var(--brand-dark);transform:translateY(-1px)}
-.menu-industry-icon{display:inline-flex;align-items:center;justify-content:center;width:1.7rem;height:1.7rem;margin-right:.5rem;border:1px solid #b8d4d8;border-radius:.5rem;background:#f8fcfc;color:var(--brand);font-family:inherit;font-size:1rem;font-weight:500;line-height:1;vertical-align:middle;box-shadow:0 3px 8px rgba(16,49,62,.06);transition:background-color .16s ease,color .16s ease,border-color .16s ease,transform .16s ease}
+.menu-industry-icon{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;width:1.7rem;height:1.7rem;margin-right:.5rem;border:1px solid #b8d4d8;border-radius:.5rem;background:#f8fcfc;color:var(--brand);font-family:inherit;font-size:1rem;font-weight:500;line-height:1;vertical-align:middle;box-shadow:0 3px 8px rgba(16,49,62,.06);transition:background-color .16s ease,color .16s ease,border-color .16s ease,transform .16s ease}
 .industry-mega a:hover .menu-industry-icon,.industry-mega a:focus-visible .menu-industry-icon,.mobile-nav a:hover .menu-industry-icon{border-color:var(--brand);background:var(--brand-pale);color:var(--brand-dark);transform:translateY(-1px)}
 .nav-cta .nav-icon{color:inherit}
 .desktop-nav summary::-webkit-details-marker{display:none}
@@ -67,10 +67,10 @@ p{color:var(--ink-soft)}
 .mega-overview{grid-column:1/-1!important;background:var(--brand-dark)!important;color:#fff!important;text-align:center;font-weight:800;font-size:1rem!important}
 .mega-group{min-width:0}
 .mega-heading{margin-bottom:.35rem;border-bottom:1px solid var(--line);color:var(--ink)!important;font-size:1rem!important;font-weight:800}
-.industry-mega{position:fixed;top:76px;left:50%;transform:translateX(-50%);width:min(680px,calc(100vw - 2rem));max-height:calc(100vh - 92px);overflow:auto;padding:1rem;background:#fff;border:1px solid var(--line);border-radius:0 0 1rem 1rem;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
-.industry-mega a{min-width:0;padding:.8rem .9rem;border-radius:.6rem;color:var(--ink-soft);font-size:1rem;line-height:1.45}
+.industry-mega{position:fixed;top:76px;left:50%;transform:translateX(-50%);width:min(940px,calc(100vw - 2rem));max-height:calc(100vh - 92px);overflow:auto;padding:1.15rem;background:#fff;border:1px solid var(--line);border-radius:0 0 1rem 1rem;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem 1rem}
+.industry-mega a{display:flex;min-width:0;align-items:center;padding:.82rem .9rem;border-radius:.6rem;color:var(--ink-soft);font-size:1rem;line-height:1.4;white-space:normal;overflow-wrap:anywhere}
 .industry-mega a:hover,.industry-mega a:focus-visible{background:var(--brand-pale);color:var(--brand-dark)}
-.industry-overview{grid-column:1/-1;background:var(--brand-dark);color:#fff!important;text-align:center;font-weight:800}
+.industry-overview{grid-column:1/-1;justify-content:center;background:var(--brand-dark);color:#fff!important;text-align:center;font-weight:800}
 .nav-cta{background:var(--accent);color:#fff!important;padding:.75rem 1.05rem!important;border-radius:.7rem}
 .nav-cta:hover{background:var(--accent-dark)}
 .menu-toggle{position:relative;z-index:100;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:.7rem;background:#fff;color:var(--ink);font-size:1.4rem;pointer-events:auto;touch-action:manipulation;-webkit-tap-highlight-color:rgba(8,117,135,.16)}
