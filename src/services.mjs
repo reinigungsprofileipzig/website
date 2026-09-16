@@ -4,7 +4,7 @@ export const site = {
   baseUrl: 'https://reinigungsprofi-leipzig.de',
   phoneDisplay: '0341 45086021',
   phone: '+4934145086021',
-  email: 'info@quadclean.de',
+  email: 'info@reinigungsprofi-leipzig.de',
   address: 'Zschortauer Straße 76',
   postalCode: '04129',
   city: 'Leipzig',
