@@ -184,7 +184,7 @@ function footer() {
     <div><a class="logo" href="/"><img src="/images/logo-reinigungsprofi-leipzig-weiss-384.webp" width="184" height="30" loading="lazy" alt="ReinigungsProfi Leipzig"></a><p>Persönliche Gebäudereinigung und Objektbetreuung für Leipzig und Umgebung.</p></div>
     <div><h2>Leistungen</h2><ul class="footer-links">${topServices.map(service => `<li><a href="${service.path}">${esc(service.title)}</a></li>`).join('')}<li><a href="/dienstleistungen/">Alle Leistungen</a></li></ul></div>
     <div><h2>Unternehmen</h2><ul class="footer-links"><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/jobs/">Jobs</a></li><li><a href="/dienstleistungen/branchen/">Branchen</a></li><li><a href="/impressum/">Impressum</a></li><li><a href="/datenschutz/">Datenschutz</a></li></ul></div>
-    <div><h2>Kontakt</h2><ul class="footer-links"><li>${site.address}</li><li>${site.postalCode} ${site.city}</li><li><a href="tel:${site.phone}">${site.phoneDisplay}</a></li><li><a href="mailto:${site.email}">${site.email}</a></li></ul></div>
+    <div><h2>Kontakt</h2><ul class="footer-links"><li>${site.company}</li><li>${site.address}</li><li>${site.postalCode} ${site.city}</li><li><a href="tel:${site.phone}">${site.phoneDisplay}</a></li><li><a href="mailto:${site.email}">${site.email}</a></li></ul></div>
   </div><div class="footer-bottom">© ${new Date().getFullYear()} ReinigungsProfi Leipzig. Alle Rechte vorbehalten.</div></div></footer>
   <div class="sticky-cta" aria-label="Schnellkontakt"><a class="btn btn-brand" href="tel:${site.phone}">Anrufen</a><a class="btn btn-primary" href="#kontakt">Angebot</a></div>
   <script src="/script.js?v=20260621-3" defer></script>`;
