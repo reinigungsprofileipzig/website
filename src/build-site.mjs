@@ -191,7 +191,7 @@ function footer() {
     <div><h2>Kontakt</h2><ul class="footer-links"><li>${site.company}</li><li>${site.address}</li><li>${site.postalCode} ${site.city}</li><li><a href="tel:${site.phone}">${site.phoneDisplay}</a></li><li><a href="mailto:${site.email}">${site.email}</a></li></ul></div>
   </div><div class="footer-bottom">© ${new Date().getFullYear()} ReinigungsProfi Leipzig. Alle Rechte vorbehalten.</div></div></footer>
   <div class="sticky-cta" aria-label="Schnellkontakt"><a class="btn btn-brand" href="tel:${site.phone}">Anrufen</a><a class="btn btn-primary" href="#kontakt">Angebot</a></div>
-  <script src="/script.js?v=20260621-3" defer></script>`;
+  <script src="/script.js?v=20260621-4" defer></script>`;
 }
 
 function baseSchema(pathname) {

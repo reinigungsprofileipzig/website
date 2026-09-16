@@ -104,6 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', event => {
+      if (!event.target.closest('a')) {
+        const link = card.querySelector('.card-link');
+        if (link) {
+          link.click();
+        }
+      }
+    });
+  });
+
   const params = new URLSearchParams(window.location.search);
   document.querySelectorAll('.js-contact-form').forEach(form => {
     const status = form.querySelector('.form-status');
