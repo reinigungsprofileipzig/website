@@ -1,19 +1,21 @@
 export const site = {
   name: 'ReinigungsProfi Leipzig',
+  company: 'Quadclean GmbH',
   baseUrl: 'https://reinigungsprofi-leipzig.de',
-  phoneDisplay: '0160 / 966 04793',
-  phone: '+4916096604793',
-  email: 'info@reinigungsprofi-leipzig.de',
-  address: 'Breisgaustraße 33',
-  postalCode: '04209',
+  phoneDisplay: '0341 45086021',
+  phone: '+4934145086021',
+  email: 'info@quadclean.de',
+  address: 'Zschortauer Straße 76',
+  postalCode: '04129',
   city: 'Leipzig',
-  owner: 'Cedric William Nzouengue',
-  formAction: 'https://mailform.ukns.eu/kunden/mailform.php'
+  owner: 'Quadclean GmbH',
+  managingDirector: 'Slatan Nadarevic',
+  procurator: 'Sven Schicke',
+  formAction: 'https://mailform.quadclean.de/mailform.php'
 };
 
 export const categories = [
   { key: 'gebaeudereinigung', label: 'Gebäudereinigung', icon: 'building', intro: 'Regelmäßige und intensive Reinigung für gepflegte, hygienische Innen- und Außenflächen.' },
-  { key: 'hotelreinigung', label: 'Hotelreinigung', icon: 'bed', intro: 'Planbare Sauberkeit für Hotels, Apartments, Gastronomie und Gästebereiche.' },
   { key: 'aussenanlagen', label: 'Außenanlagen', icon: 'leaf', intro: 'Saisonale und laufende Pflege für sichere, einladende Grundstücke.' },
   { key: 'spezialreinigung', label: 'Spezialreinigung', icon: 'sparkles', intro: 'Sorgfältig geplante Einsätze für besondere Verschmutzungen und Anforderungen.' },
   { key: 'instandhaltung', label: 'Instandhaltung', icon: 'tools', intro: 'Koordinierte Objektbetreuung und werterhaltende Leistungen aus einer Hand.' }
@@ -22,11 +24,9 @@ export const categories = [
 const legacy = {
   bueroreinigung: '/buero-reinigung-leipzig/',
   fensterreinigung: '/fensterreinigung-leipzig/',
-  ferienwohnung: '/ferienwohnung-reinigung-leipzig/',
   gastronomie: '/gastronomie-reinigung-leipzig/',
   grundreinigung: '/grundreinigung-leipzig/',
   hausmeister: '/hausmeisterservice-leipzig/',
-  hotelreinigung: '/hotelreinigung-leipzig/',
   praxisreinigung: '/praxisreinigung-leipzig/',
   treppenhaus: '/treppenhausreinigung-leipzig/',
   unterhaltsreinigung: '/unterhaltsreinigung-leipzig/'
@@ -65,18 +65,7 @@ export const services = [
     approach: 'Vor dem Angebot klären wir Glasart, Fläche, Höhe, Zugang und den gewünschten Umfang inklusive oder exklusive Rahmen.',
     related: ['glasreinigung', 'fassadenreinigung', 'grundreinigung', 'unterhaltsreinigung']
   }),
-  make('ferienwohnung', 'Ferienwohnung-Reinigung', 'hotelreinigung', {
-    priority: 'main', image: '/images/ferienwohnung-reinigung-leipzig-schnell.webp', slug: 'ferienwohnung-reinigung-leipzig',
-    claim: 'Verlässliche Gästewechsel mit einem gepflegten, einladenden Ergebnis',
-    short: 'Koordinierte Reinigung von Ferienwohnungen und Apartments zwischen Abreise und neuem Check-in.',
-    audiences: ['Ferienwohnungen', 'Business-Apartments', 'Monteurunterkünfte', 'private Vermieter'],
-    tasks: ['Wohn- und Schlafbereiche reinigen', 'Bad und Küche hygienisch säubern', 'Böden und Kontaktflächen pflegen', 'sichtbare Mängel dokumentieren', 'Verbrauchsmaterial nach Vorgabe auffüllen', 'Zeitfenster mit Check-in abstimmen'],
-    issues: ['kurze Zeit zwischen Gästewechseln', 'schwankender Reinigungsaufwand', 'verlässliche Rückmeldung bei Schäden oder fehlendem Inventar'],
-    intervals: ['nach Buchungskalender', 'bei jedem Gästewechsel', 'für Grundreinigungen', 'als Urlaubsvertretung'],
-    approach: 'Ein objektbezogener Ablaufplan hält fest, was bei jedem Wechsel geprüft, gereinigt und rückgemeldet wird.',
-    related: ['zimmerreinigung', 'housekeeping', 'kuechenreinigung', 'grundreinigung']
-  }),
-  make('gastronomie', 'Gastronomiereinigung', 'hotelreinigung', {
+  make('gastronomie', 'Gastronomiereinigung', 'gebaeudereinigung', {
     priority: 'main', image: '/images/gastronomie-reinigung-leipzig-hygiene.webp', slug: 'gastronomiereinigung-leipzig',
     claim: 'Saubere Gasträume und Küchenbereiche, abgestimmt auf Ihren Betrieb',
     short: 'Strukturierte Reinigung für Restaurants, Cafés, Bars und gastronomische Betriebsflächen.',
@@ -85,7 +74,7 @@ export const services = [
     issues: ['Fett, Speisereste und hohe Frequentierung', 'enge Zeitfenster vor oder nach dem Betrieb', 'unterschiedliche Material- und Hygieneanforderungen'],
     intervals: ['täglich', 'mehrmals wöchentlich', 'nach Veranstaltungen', 'als Intensivreinigung'],
     approach: 'Betriebliche Hygienepläne und Verantwortlichkeiten werden in das objektspezifische Leistungsverzeichnis übernommen; eine HACCP-Beratung ersetzen wir nicht.',
-    related: ['kuechenreinigung', 'spueldienst', 'sanitaerreinigung', 'grundreinigung']
+    related: ['kuechenreinigung', 'sanitaerreinigung', 'unterhaltsreinigung', 'grundreinigung']
   }),
   make('grundreinigung', 'Grundreinigung', 'gebaeudereinigung', {
     priority: 'main', image: '/images/grundreinigung-leipzig-intensiv.webp',
@@ -108,17 +97,6 @@ export const services = [
     intervals: ['wöchentlich', 'mehrmals pro Woche', 'saisonal', 'nach individuellem Objektplan'],
     approach: 'Leistungsgrenzen, Kontrollpunkte und Rückmeldewege werden klar vereinbart; zulassungspflichtige Handwerksarbeiten gehören nicht zum Angebot.',
     related: ['winterdienst', 'gruenanlagenpflege', 'treppenhaus', 'aussenreinigung']
-  }),
-  make('hotelreinigung', 'Hotelreinigung', 'hotelreinigung', {
-    priority: 'main', image: '/images/hotelreinigung-leipzig-zimmer.webp',
-    claim: 'Planbare Sauberkeit im Takt von Belegung, Check-out und Gästebetrieb',
-    short: 'Flexible Unterstützung für Zimmer, öffentliche Bereiche und Housekeeping-Abläufe in Leipziger Hotels.',
-    audiences: ['Hotels', 'Pensionen', 'Hostels', 'Serviced Apartments'],
-    tasks: ['Gästezimmer nach Vorgabe reinigen', 'Bäder hygienisch pflegen', 'öffentliche Bereiche sauber halten', 'Housekeeping-Abläufe unterstützen', 'Verbrauchsmaterial nach Vorgabe auffüllen', 'Abweichungen dokumentieren'],
-    issues: ['schwankende Auslastung', 'kurze Zeitfenster bis zum Check-in', 'konstante Standards über viele Zimmer hinweg'],
-    intervals: ['täglich nach Belegung', 'als feste Unterstützung', 'bei Auslastungsspitzen', 'für öffentliche Bereiche im Turnus'],
-    approach: 'Gemeinsam definieren wir Zimmerstandard, Prüfpunkte, Tagesübergabe und den Umgang mit Fundsachen oder technischen Auffälligkeiten.',
-    related: ['housekeeping', 'zimmerreinigung', 'kuechenreinigung', 'spueldienst']
   }),
   make('praxisreinigung', 'Praxisreinigung', 'gebaeudereinigung', {
     priority: 'main', image: '/images/praxisreinigung-leipzig-hygiene.webp',
@@ -171,7 +149,7 @@ export const services = [
     issues: ['Laufspuren und eingebundener Schmutz', 'Flecken unterschiedlicher Herkunft', 'Nutzungsausfall während der Trocknung'],
     intervals: ['einmalig', 'jährlich', 'halbjährlich in Laufzonen', 'ergänzend zur Unterhaltsreinigung'],
     approach: 'Material, Verlegeart, Farbechtheit und Flecken werden vorab geprüft; nicht jeder ältere Fleck lässt sich vollständig entfernen.',
-    related: ['bueroreinigung', 'grundreinigung', 'hotelreinigung', 'unterhaltsreinigung']
+    related: ['bueroreinigung', 'grundreinigung', 'fensterreinigung', 'unterhaltsreinigung']
   }),
   make('glasreinigung', 'Glasreinigung', 'gebaeudereinigung', {
     priority: 'high', image: '/images/glasreinigung-leipzig-professionell.webp', claim: 'Klare Glasflächen innen und außen – passend zu Objekt und Zugang',
@@ -223,27 +201,7 @@ export const services = [
     approach: 'Containerzahl, Ausstattung, Standort, Wasserzugang und Zutrittsregeln bestimmen den konkreten Ablauf.',
     related: ['baureinigung', 'sanitaerreinigung', 'unterhaltsreinigung', 'grundreinigung']
   }),
-  make('housekeeping', 'Housekeeping', 'hotelreinigung', {
-    priority: 'medium', image: '/images/housekeeping-leipzig-professionell.webp', claim: 'Entlastung im Tagesgeschäft mit klaren Standards und Übergaben',
-    short: 'Housekeeping-Unterstützung für Hotels, Pensionen und Serviced Apartments in Leipzig.',
-    audiences: ['Hotels', 'Pensionen', 'Hostels', 'Serviced Apartments'],
-    tasks: ['Zimmerstatus und Tageslisten übernehmen', 'Zimmer nach Hausstandard vorbereiten', 'Wäsche- und Materialwege abstimmen', 'öffentliche Bereiche kontrollieren', 'Fundsachen und Mängel melden', 'Übergabe an Rezeption dokumentieren'],
-    issues: ['täglich wechselnde Auslastung', 'Zeitdruck bis zum Check-in', 'gleichbleibende Qualität bei wechselnden Zimmern'],
-    intervals: ['täglich', 'nach Belegung', 'bei Auslastungsspitzen', 'als planbare Vertretung'],
-    approach: 'Vor Start werden Hausstandard, Zimmerzeiten, Statusmeldungen und Ansprechpartner gemeinsam festgelegt.',
-    related: ['hotelreinigung', 'zimmerreinigung', 'ferienwohnung', 'spueldienst']
-  }),
-  make('zimmerreinigung', 'Zimmerreinigung', 'hotelreinigung', {
-    priority: 'medium', image: '/images/zimmerreinigung-leipzig-professionell.webp', claim: 'Einladende Gästezimmer mit einem nachvollziehbaren Ablauf',
-    short: 'Zimmerreinigung nach Belegung und Objektstandard für Hotels, Pensionen und Apartments.',
-    audiences: ['Hotels', 'Pensionen', 'Hostels', 'Apartmenthäuser'],
-    tasks: ['Schlaf- und Wohnbereich reinigen', 'Bad hygienisch säubern', 'Betten nach Vorgabe herrichten', 'Böden und Kontaktflächen pflegen', 'Verbrauchsartikel nach Liste ergänzen', 'Mängel und Fundsachen melden'],
-    issues: ['enge Check-out- und Check-in-Zeiten', 'unterschiedliche Zimmerzustände', 'verlässliche Statuskommunikation'],
-    intervals: ['bei Abreise', 'als Bleibereinigung', 'täglich nach Liste', 'für Grundreinigungen'],
-    approach: 'Checklisten je Zimmertyp sorgen für einen einheitlichen Standard, ohne Besonderheiten des Hauses zu übergehen.',
-    related: ['hotelreinigung', 'housekeeping', 'ferienwohnung', 'grundreinigung']
-  }),
-  make('kuechenreinigung', 'Küchenreinigung', 'hotelreinigung', {
+  make('kuechenreinigung', 'Küchenreinigung', 'gebaeudereinigung', {
     priority: 'medium', image: '/images/kuechenreinigung-leipzig-professionell.webp', claim: 'Gründlich gereinigte Küchenbereiche, abgestimmt auf Betrieb und Material',
     short: 'Regelmäßige und intensive Reinigung gewerblich genutzter Küchen- und Nebenbereiche.',
     audiences: ['Restaurants', 'Hotels', 'Kantinen', 'Cafés'],
@@ -251,19 +209,9 @@ export const services = [
     issues: ['Fettfilme und organische Rückstände', 'heiße oder laufende Geräte', 'enge Zeitfenster nach Betriebsschluss'],
     intervals: ['täglich', 'wöchentlich intensiv', 'nach Veranstaltungen', 'als Grundreinigung'],
     approach: 'Arbeitsbereiche werden nur freigegeben und erkaltete, zugängliche Geräte nach vereinbartem Umfang behandelt; technische Innenreinigung ist separat zu prüfen.',
-    related: ['gastronomie', 'spueldienst', 'sanitaerreinigung', 'grundreinigung']
+    related: ['gastronomie', 'hygienereinigung', 'sanitaerreinigung', 'grundreinigung']
   }),
-  make('spueldienst', 'Spüldienst', 'hotelreinigung', {
-    priority: 'medium', image: '/images/spueldienst-leipzig-professionell.webp', claim: 'Verlässliche Unterstützung an der Spülstrecke bei planbaren und hohen Auslastungen',
-    short: 'Unterstützender Spüldienst für Gastronomie, Hotellerie, Kantinen und Veranstaltungen.',
-    audiences: ['Restaurants', 'Hotels', 'Kantinen', 'Eventlocations'],
-    tasks: ['Geschirr und Besteck vorsortieren', 'Spülmaschinen fachgerecht bestücken', 'sauberes Spülgut bereitstellen', 'Spülbereich laufend sauber halten', 'Abfälle nach Vorgabe trennen', 'Schichtübergaben abstimmen'],
-    issues: ['Belastungsspitzen im Service', 'begrenzter Platz in der Spülküche', 'schneller, hygienischer Materialfluss'],
-    intervals: ['nach Schichtplan', 'bei Veranstaltungen', 'an Wochenenden', 'als planbare Zusatzunterstützung'],
-    approach: 'Maschineneinweisung, Hygienevorgaben, Schichtzeiten und Verantwortlichkeiten werden vor dem ersten Einsatz geklärt.',
-    related: ['gastronomie', 'kuechenreinigung', 'hotelreinigung', 'housekeeping']
-  }),
-  make('aussenreinigung', 'Außenreinigung', 'hotelreinigung', {
+  make('aussenreinigung', 'Außenreinigung', 'aussenanlagen', {
     priority: 'medium', image: '/images/aussenreinigung-leipzig-professionell.webp', claim: 'Gepflegte Eingänge, Terrassen und Außenflächen für einen guten ersten Eindruck',
     short: 'Regelmäßige Außenreinigung rund um Hotels, Gastronomie, Gewerbe und Wohnobjekte.',
     audiences: ['Hotels', 'Gastronomie', 'Gewerbeobjekte', 'Hausverwaltungen'],
@@ -354,7 +302,7 @@ export const industries = [
   { key: 'bueros', title: 'Büros & Kanzleien', path: '/reinigung-fuer-bueros-kanzleien-leipzig/', claim: 'Gepflegte Arbeitsplätze ohne Störung des Tagesgeschäfts', short: 'Büroreinigung für Unternehmen, Kanzleien, Agenturen und Verwaltungen mit flexiblen Zeitfenstern.', needs: ['Arbeitsbereiche und sensible Unterlagen respektieren', 'Küchen, Sanitär- und Besprechungsräume passend gewichten', 'Zutritt und Schlüsselregelungen sicher abstimmen'], related: ['bueroreinigung', 'unterhaltsreinigung', 'teppichreinigung', 'fensterreinigung'] },
   { key: 'einzelhandel', title: 'Einzelhandel & Ladenlokale', path: '/reinigung-fuer-einzelhandel-leipzig/', claim: 'Ein sauberer Auftritt von der Eingangstür bis zur Verkaufsfläche', short: 'Reinigung für Läden, Verkaufsflächen, Showrooms und Nebenräume vor oder nach den Öffnungszeiten.', needs: ['Eingang, Schaufenster und Laufwege sichtbar sauber halten', 'Reinigung an Liefer- und Öffnungszeiten anpassen', 'Materialien von Verkaufsfläche und Einrichtung berücksichtigen'], related: ['unterhaltsreinigung', 'fensterreinigung', 'glasreinigung', 'sanitaerreinigung'] },
   { key: 'fitness', title: 'Fitnessstudios & Sportanlagen', path: '/reinigung-fuer-fitnessstudios-leipzig/', claim: 'Hygienische Trainings-, Umkleide- und Sanitärbereiche bei hoher Nutzung', short: 'Reinigung für Fitnessstudios, Kursräume und kleinere Sportanlagen mit Fokus auf Kontakt- und Nassbereiche.', needs: ['Kontaktflächen und Trainingszonen systematisch bearbeiten', 'Duschen, Umkleiden und Sanitärbereiche engmaschig planen', 'Reinigung in laufenden Betrieb oder Randzeiten integrieren'], related: ['hygienereinigung', 'sanitaerreinigung', 'unterhaltsreinigung', 'glasreinigung'] },
-  { key: 'gastronomie-hotels', title: 'Gastronomie & Hotels', path: '/reinigung-fuer-gastronomie-hotels-leipzig/', claim: 'Sauberkeit im Rhythmus von Service, Check-out und Gästebetrieb', short: 'Reinigung für Restaurants, Hotels, Pensionen und Apartments mit klaren Übergaben und objektspezifischen Standards.', needs: ['Zeitfenster zwischen Service und Check-in einhalten', 'Gäste-, Küchen- und Sanitärbereiche getrennt organisieren', 'Statusmeldungen und tägliche Übergaben verständlich halten'], related: ['hotelreinigung', 'gastronomie', 'housekeeping', 'kuechenreinigung'] },
+  { key: 'gastronomie-hotels', title: 'Gastronomie & Restaurants', path: '/reinigung-fuer-gastronomie-hotels-leipzig/', claim: 'Sauberkeit im Rhythmus von Service und Küchenbetrieb', short: 'Objektbezogene Reinigung für Restaurants, Bars, Cafés und Küchenbereiche mit klaren Hygieneplänen.', needs: ['Reinigungszeiten außerhalb von Vorbereitung und Gästebetrieb abstimmen', 'Gäste-, Küchen- und Sanitärbereiche getrennt organisieren', 'Fettlösende und materialschonende Reinigungsmittel einsetzen'], related: ['gastronomie', 'kuechenreinigung', 'sanitaerreinigung', 'unterhaltsreinigung'], context: 'In der Gastronomie sind ein tadelloser Gästebereich und verlässliche Küchenhygiene unverzichtbar. Die Reinigung muss sich passgenau in Betriebs- und Schließzeiten einfügen.', planning: ['Einsätze vor Öffnung oder nach Küchenschluss', 'farbcodierte Arbeitsgeräte für Gastraum, Küche und Sanitär', 'materialgerechte Behandlung von Fliesen und Edelstahl', 'periodische Grund- und Intensivreinigungen'] },
   { key: 'hausverwaltungen', title: 'Hausverwaltungen & WEG', path: '/reinigung-fuer-hausverwaltungen-leipzig/', claim: 'Verlässliche Objektpflege mit kurzen Rückmeldewegen', short: 'Reinigung und Objektbetreuung für Mehrfamilienhäuser, WEG und verwaltete Gewerbeimmobilien in Leipzig.', needs: ['Leistungen je Aufgang und Nebenfläche eindeutig festlegen', 'Auffälligkeiten nachvollziehbar an die Verwaltung melden', 'Treppenhaus, Außenpflege und Winterdienst koordinieren'], related: ['treppenhaus', 'hausmeister', 'winterdienst', 'gruenanlagenpflege'] },
   { key: 'pflege-soziales', title: 'Pflegeeinrichtungen & soziale Dienste', path: '/reinigung-fuer-pflegeeinrichtungen-soziale-dienste-leipzig/', claim: 'Sensible Reinigung für gemeinschaftlich und intensiv genutzte Räume', short: 'Planbare Reinigung für Pflegewohnen, Tagespflege, Beratungsstellen und soziale Einrichtungen mit abgestimmten Hygiene- und Ruhezeiten.', needs: ['Bewohnerzimmer, Gemeinschafts- und Sanitärbereiche getrennt planen', 'Reinigungszeiten mit Pflege, Betreuung und Mahlzeiten abstimmen', 'Kontaktflächen und häufig genutzte Wege nachvollziehbar einbeziehen'], related: ['hygienereinigung', 'sanitaerreinigung', 'unterhaltsreinigung', 'fensterreinigung'], context: 'In Pflege- und Sozialeinrichtungen treffen dauerhaft genutzte Wohnbereiche, Publikumsverkehr und sensible persönliche Situationen aufeinander. Der Reinigungsplan muss Rücksicht, Kontinuität und klar definierte Hygienebereiche verbinden.', planning: ['feste Teams und vertraute Ansprechpartner', 'ruhige Einsatzfenster ohne unnötige Störung', 'abgestimmte Mittel für sensible Oberflächen', 'dokumentierte Sonder- und Grundreinigungen'] },
   { key: 'industrie-produktion', title: 'Industrie & Produktion', path: '/reinigung-fuer-industrie-produktion-leipzig/', claim: 'Saubere Neben-, Verkehrs- und Produktionsbereiche nach Betriebsplan', short: 'Objektbezogene Reinigung für Produktionsbetriebe, Werkhallen, Sozialräume und Verwaltungsflächen in Leipzig.', needs: ['Sicherheitszonen und betriebliche Freigaben beachten', 'Büro-, Sozial- und Hallenbereiche klar voneinander trennen', 'Schichtzeiten, Maschinenstillstände und Verkehrswege einplanen'], related: ['unterhaltsreinigung', 'grundreinigung', 'sanitaerreinigung', 'aussenreinigung'], context: 'Produktionsstandorte verbinden Hallen, Lager, Büros, Umkleiden und Außenflächen. Verschmutzungsarten und Sicherheitsregeln unterscheiden sich deutlich, weshalb jeder Bereich vorab fachlich eingeordnet werden muss.', planning: ['Begehung mit Sicherheits- und Objektverantwortlichen', 'klar markierte freigegebene Reinigungsflächen', 'Einsätze passend zu Schicht- und Stillstandszeiten', 'Abgrenzung zu technischen Maschinenreinigungen'] },
