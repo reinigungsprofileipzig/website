@@ -20,7 +20,7 @@ const optimizeImageMarkup = html => html.replace(/<img([^>]*?)src="(\/images\/[^
   const sizes = isCard
     ? '(max-width: 599px) calc(100vw - 2rem), (max-width: 819px) calc(50vw - 2rem), (max-width: 1039px) calc(33vw - 2rem), 25vw'
     : '(max-width: 819px) calc(100vw - 2rem), 45vw';
-  return `<img${before}src="${base}-768.webp?v=ai" srcset="${base}-480.webp?v=ai 480w, ${base}-672.webp?v=ai 672w, ${base}-768.webp?v=ai 768w" sizes="${sizes}"${after}>`;
+  return `<img${before}src="${base}-768.webp?v=2" srcset="${base}-480.webp?v=2 480w, ${base}-672.webp?v=2 672w, ${base}-768.webp?v=2 768w" sizes="${sizes}"${after}>`;
 });
 const writePage = async (pathname, html) => {
   const directory = pathname === '/' ? root : path.join(root, pathname.replace(/^\//, '').replace(/\/$/, ''));
